@@ -1,3 +1,11 @@
 .card-title {
   padding-top: 0.1rem;
 }
+
+.collection {
+  border: transparent;
+}
+
+.collection-item img {
+  max-width: 200px;
+}
