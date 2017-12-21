@@ -47,7 +47,7 @@ $(document).ready(function() {
     $("#lastName").text(snapshot.val().lastName);
     $("#email").text(snapshot.val().email);
     $("#dob").text(snapshot.val().dob);
-    $("#img").text(snapshot.val().dob);
+    $("#img").text(snapshot.val().img);
   }, function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
   });
