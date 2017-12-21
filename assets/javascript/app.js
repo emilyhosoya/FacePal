@@ -9,8 +9,6 @@ $(document).ready(function() {
     closeOnSelect: false // Close upon selecting a date,
   });
   $("select").material_select();
-});
-
   
   // Initialize Firebase
   var config = {
@@ -25,9 +23,9 @@ $(document).ready(function() {
   var lastName = "";
   var email = "";
   
-  var dob =0;
-  var upload="";
-  var submit="";
+  var dob = 0;
+  var upload = "";
+  var submit = "";
 
   firebase.initializeApp(config);
   var ref= firebase.database().ref();
@@ -58,14 +56,6 @@ $(document).ready(function() {
     console.log(snapshot.val().lastName);
     console.log(snapshot.val().dob);
     console.log(snapshot.val().upload);
-    // Change the HTML to reflect
-    // $("#firstName-display").text(snapshot.val().firstName);
-    // $("#lastname-display").text(snapshot.val().lastName);
-    // $("#email-display").text(snapshot.val().email);
-    // $("#dob-display").text(snapshot.val().dob);
-    // $("upload-display").text(snapshot.val().upload);
   }, function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
   });
-
- 
