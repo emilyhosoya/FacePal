@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyDUnxL1x14WGo0ZFV2okfnh6ekHWVsL6Hs",
@@ -12,45 +11,61 @@ $(document).ready(function() {
   var firstName = "";
   var lastName = "";
   var email = "";
-  
-  var dob =0;
-  var btn="";
-  var submit="";
+
+  var dob = 0;
+  var btn = "";
+  var submit = "";
 
   firebase.initializeApp(config);
   // Initialize Materialize elements
   $("#submit").on("click", function(event) {
     event.preventDefault();
-    firstName = $("#firstName").val().trim();
-    email = $("#email").val().trim();
-    lastName = $("#lastName").val().trim();
-    datepicke = $("#dob").val().trim();
-    img = $("#img").val().trim();
-    submit = $("#submit").val().trim();
+    firstName = $("#first-name")
+      .val()
+      .trim();
+    email = $("#email")
+      .val()
+      .trim();
+    lastName = $("#last-name")
+      .val()
+      .trim();
+    dob = $("#dob")
+      .val()
+      .trim();
+    img = $("#img")
+      .val()
+      .trim();
+    submit = $("#submit")
+      .val()
+      .trim();
     ref.push({
       firstName: firstName,
       lastName: lastName,
       email: email,
       dob: dob,
-      img : img,
+      img: img
     });
   });
-  ref.on("child_added", function(snapshot) {
-    // Log everything that's coming out of snapshot
-    console.log(snapshot.val());
-    console.log(snapshot.val().firstName);
-    console.log(snapshot.val().lastName);
-    console.log(snapshot.val().dob);
-    console.log(snapshot.val().img);
-    // Change the HTML to reflect
-    $("#firstName").text(snapshot.val().firstName);
-    $("#lastName").text(snapshot.val().lastName);
-    $("#email").text(snapshot.val().email);
-    $("#dob").text(snapshot.val().dob);
-    $("#img").text(snapshot.val().img);
-  }, function(errorObject) {
-    console.log("Errors handled: " + errorObject.code);
-  });
+  ref.on(
+    "child_added",
+    function(snapshot) {
+      // Log everything that's coming out of snapshot
+      console.log(snapshot.val());
+      console.log(snapshot.val().firstName);
+      console.log(snapshot.val().lastName);
+      console.log(snapshot.val().dob);
+      console.log(snapshot.val().img);
+      // Change the HTML to reflect
+      $("#first-name").text(snapshot.val().firstName);
+      $("#last-name").text(snapshot.val().lastName);
+      $("#email").text(snapshot.val().email);
+      $("#dob").text(snapshot.val().dob);
+      $("#img").text(snapshot.val().img);
+    },
+    function(errorObject) {
+      console.log("Errors handled: " + errorObject.code);
+    }
+  );
 
   $(".datepicker").pickadate({
     selectMonths: true, // Creates a dropdown to control month
