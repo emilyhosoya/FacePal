@@ -8,4 +8,5 @@ $(document).ready(function() {
     close: "Ok",
     closeOnSelect: false // Close upon selecting a date,
   });
+  $("select").material_select();
 });
