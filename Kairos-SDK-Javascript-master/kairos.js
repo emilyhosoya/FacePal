@@ -11,8 +11,8 @@
   @param app_key : your app_key */
 var Kairos = function(app_id, app_key) 
 {
-  this.app_id   = config.app_id;
-  this.app_key  = config.app_key;
+  this.app_id   = app_id;
+  this.app_key  = app_key;
   this.api_host = 'https://api.kairos.com/';
 };
 
