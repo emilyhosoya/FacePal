@@ -58,4 +58,5 @@ $(document).ready(function() {
     console.log(snapshot.val().upload);
   }, function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
-  });
+  })
+})
