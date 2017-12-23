@@ -11,14 +11,6 @@ $(document).ready(function() {
   $("select").material_select();
   
   // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDUnxL1x14WGo0ZFV2okfnh6ekHWVsL6Hs",
-    authDomain: "facepal-a9ecc.firebaseapp.com",
-    databaseURL: "https://facepal-a9ecc.firebaseio.com",
-    projectId: "facepal-a9ecc",
-    storageBucket: "facepal-a9ecc.appspot.com",
-    messagingSenderId: "603932838503"
-  };
   var firstName = "";
   var lastName = "";
   var email = "";
@@ -35,7 +27,7 @@ $(document).ready(function() {
     firstName = $("#firstName").val().trim();
     email = $("#email").val().trim();
     lastName = $("#lastName").val().trim();
-    datepicke = $("#dob").val().trim();
+    datepicker = $("#dob").val().trim();
     upload = $("#upload").val().trim();
     submit = $("#submit").val().trim();
 
@@ -59,3 +51,4 @@ $(document).ready(function() {
   }, function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
   });
+}
