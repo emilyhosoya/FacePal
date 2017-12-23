@@ -50,5 +50,10 @@ $(document).ready(function() {
     console.log(snapshot.val().upload);
   }, function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
+<<<<<<< HEAD
   });
 }
+=======
+  })
+})
+>>>>>>> 9b34fa2053d9b5e7f1424e325ea72da9467cc361
