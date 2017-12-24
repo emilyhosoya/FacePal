@@ -1,7 +1,8 @@
 $(document).ready(function() {
   $(".datepicker").pickadate({
     selectMonths: true, // Creates a dropdown to control month
-    selectYears: 15, // Creates a dropdown of 15 years to control year,
+    selectYears: 100,
+    max: moment().format("YYYY"),
     today: "Today",
     clear: "Clear",
     close: "Ok",
@@ -25,7 +26,9 @@ $(document).ready(function() {
   let firstName = "";
   let lastName = "";
   let email = "";
-  let dob = 0;
+  let dob = "";
+  const today = moment().format("DD MMMM, YYYY");
+  let age = "";
   let img = "";
 
   firebase.initializeApp(config);
@@ -33,18 +36,19 @@ $(document).ready(function() {
   // Initialize Materialize elements
   $("#submit").on("click", function(event) {
     event.preventDefault();
-    firstName = $("#firstName")
+    firstName = $("#first-name")
+      .val()
+      .trim();
+    lastName = $("#last-name")
       .val()
       .trim();
     email = $("#email")
       .val()
       .trim();
-    lastName = $("#lastName")
-      .val()
-      .trim();
     dob = $("#dob")
       .val()
       .trim();
+
     img = $("#img")
       .val()
       .trim();
@@ -56,17 +60,41 @@ $(document).ready(function() {
       dob: dob,
       img: img
     });
+    $("input").val("");
   });
 
   ref.on(
     "child_added",
     function(snapshot) {
+      firstName = snapshot.val().firstName;
+      lastName = snapshot.val().lastName;
+      email = snapshot.val().email;
+      dob = snapshot.val().dob;
+      age = moment(today).diff(moment(dob), "years");
+      img = snapshot.val().img;
+
       // Log everything that's coming out of snapshot
-      console.log(snapshot.val());
-      console.log(snapshot.val().firstName);
-      console.log(snapshot.val().lastName);
-      console.log(snapshot.val().dob);
-      console.log(snapshot.val().upload);
+      console.log(`Name: ${firstName} ${lastName}`);
+      console.log(`Email: ${email}`);
+      console.log(`Born: ${dob} (${age} years old)`);
+      console.log(`Img: ${img}`);
+
+      let print = `
+      <ul class="collection">
+        <li class="collection-item">
+          <div class="center-align">
+              <img src="./user_images/${img}" class="responsive-img" id="user-img">
+          </div>
+        </li>
+        <li class="collection-item">Name:
+          ${firstName} ${lastName}
+        </li>
+        <li class="collection-item">Email:
+          ${email}
+        </li>
+      </ul>
+      <tr>`;
+      $("#new-user").append(print);
     },
     function(errorObject) {
       console.log("Errors handled: " + errorObject.code);

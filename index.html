@@ -17,76 +17,56 @@
     <div class="container">
         <div class="row">
             <div class="col s12 m6">
-                <div id="new-user">
-                    <div class="card">
-                        <div class="card-title center-align">
-                            <h4>Create Your Profile</h4>
-                        </div>
-                        <div class="card-content">
-                            <form action="#">
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <input id="firstName" type="text" class="validate" required>
-                                        <label for="first_name">First Name</label>
-                                    </div>
-                                    <div class="input-field col s6">
-                                        <input id="lastName" type="text" class="validate" required>
-                                        <label for="last_name">Last Name</label>
-                                    </div>
+                <div class="card">
+                    <div class="card-title center-align">
+                        <h4>Create Your Profile</h4>
+                    </div>
+                    <div class="card-content">
+                        <form action="#">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="first-name" type="text" class="validate" required>
+                                    <label for="first-name">First Name</label>
                                 </div>
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="email" type="email" class="validate" required>
-                                        <label for="email">Email</label>
-                                    </div>
+                                <div class="input-field col s6">
+                                    <input id="last-name" type="text" class="validate" required>
+                                    <label for="last_name">Last Name</label>
                                 </div>
-                                <div class="file-field input-field">
-                                    <div class="btn" id="upload">
-                                        <span>Upload Photo</span>
-                                        <input type="file" required/>
-                                    </div>
-                                    <div class="file-path-wrapper">
-                                        <input class="file-path validate" type="text" id="img" />
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="email" type="email" class="validate" required>
+                                    <label for="email">Email</label>
                                 </div>
-                                <div class="input-field">
-                                    <span>Date of Birth:</span>
-                                    <input type="text" class="datepicker" id="dob">
+                            </div>
+                            <div class="file-field input-field">
+                                <div class="btn" id="upload">
+                                    <span>Upload Photo</span>
+                                    <input type="file" required/>
                                 </div>
-                                <div class="input-field right-align">
-                                    <button class="btn" id="submit" type="submit" name="action">Submit
-                                        <i class="material-icons right">send</i>
-                                    </button>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" id="img" />
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                            <div class="input-field">
+                                <span>Date of Birth:</span>
+                                <input type="text" class="datepicker" id="dob">
+                            </div>
+                            <div class="input-field right-align">
+                                <button class="btn" id="submit" type="submit" name="action">Submit
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
             <div class="col s12 m6">
-                <div id="new-user">
-                    <div class="card">
-                        <div class="card-title center-align">
-                            <h4>Your Info</h4>
-                        </div>
-                        <div class="card-content">
-                            <ul class="collection">
-                                <li class="collection-item">
-                                    <div class="center-align">
-                                        <img src="./user_images/sam.jpg" class="responsive-img" id="user-img">
-                                    </div>
-                                </li>
-                                <li class="collection-item">Name:
-                                    <span id="user-name"></span>
-                                </li>
-                                <li class="collection-item">Email:
-                                    <span id="email-name"></span>
-                                </li>
-                                <li class="collection-item">DOB:
-                                    <span id="user-dob"></span>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="card">
+                    <div class="card-title center-align">
+                        <h4>Your Info</h4>
+                    </div>
+                    <div class="card-content" id="new-user">
                     </div>
                 </div>
             </div>
@@ -115,6 +95,7 @@
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
     <!-- <script src="./config.js"></script> -->
     <script src="./assets/javascript/stripe.js"></script>
