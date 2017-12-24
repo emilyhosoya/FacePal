@@ -30,6 +30,7 @@ $(document).ready(function() {
   const today = moment().format("DD MMMM, YYYY");
   let age = "";
   let img = "";
+  let paymentTokens = [];
 
   firebase.initializeApp(config);
   let ref = firebase.database().ref();
@@ -48,7 +49,6 @@ $(document).ready(function() {
     dob = $("#dob")
       .val()
       .trim();
-
     img = $("#img")
       .val()
       .trim();
