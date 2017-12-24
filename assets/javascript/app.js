@@ -94,7 +94,7 @@ $(document).ready(function() {
         </li>
       </ul>
       <tr>`;
-      $("#new-user").append(print);
+      $("#new-user").html(print);
     },
     function(errorObject) {
       console.log("Errors handled: " + errorObject.code);
