@@ -33,6 +33,7 @@
                                 <a href="#" onClick="webcamModule();">START CAMERA</a></br>
                                 <video id="webcamVideo"></video>
                                 <div id="showCounter"></div>
+                                
                                 <div class="input-field right-align">
                                     <button class="btn" id="submit" type="submit" name="action">Submit
                                         <i class="material-icons right">send</i>
@@ -81,8 +82,8 @@
                     });
                 video.addEventListener('canplay', function(ev){
                     if (!streaming) {
-                        video.setAttribute('width', '600');
-                        video.setAttribute('height', '450');
+                        video.setAttribute('width', '400');
+                        video.setAttribute('height', '300');
                         streaming = true;
                     }
                     var captureInterval = 3000;
@@ -103,8 +104,8 @@
             $("#showCounter").html("Retrieving data...");
             var canvas = document.createElement('CANVAS');
             var context = canvas.getContext('2d');
-            canvas.width = '600';
-            canvas.height = '450';
+            canvas.width = '400';
+            canvas.height = '300';
             // draw video image onto canvas, get data
             context.drawImage(video, 0, 0);
             var imageData = canvas.toDataURL('image/png');
