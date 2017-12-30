@@ -85,7 +85,7 @@ $(document).ready(function() {
         <li class="collection-item">
           <div class="center-align">
               <ul id="files"></ul>
-              <img src="${img}" class="img-fluid" id="user-img">
+              <img src="/${img}" class="img-fluid" id="user-img">
           </div>
         </li>
         <li class="collection-item">Name:

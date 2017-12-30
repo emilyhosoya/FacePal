@@ -29,8 +29,8 @@ function uploadFile() {
   dbx
     .filesUpload({ path: "/" + file.name, contents: file })
     .then(function(response) {
-      var results = document.getElementById("results");
-      results.appendChild(document.createTextNode("File uploaded!"));
+      var results = document.getElementById("user-img");
+      $(results).attr("src", `${response.path_display}`);
       console.log(response);
     })
     .catch(function(error) {
