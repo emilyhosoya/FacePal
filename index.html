@@ -13,6 +13,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
+
+    <!--Enroll Script & Such-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<link href="Kairos-SDK-Javascript-master/examples/assets/css/bootstrap.min.css" rel="stylesheet">
+		<link href="Kairos-SDK-Javascript-master/examples/assets/css/examplestyle.css" rel="stylesheet">
+		<script src="Kairos-SDK-Javascript-master/kairos.js"></script>
+		<script src="Kairos-SDK-Javascript-master/examples/assets/js/methods_test.js"></script>
+		<style>
+		#view_data {
+			padding: 10px 0;
+			color: #ff0000;
+			word-wrap: break-word;
+		}
+		#authenticationError {
+			color: #ff0000;
+		}
+		.method-test {
+			margin-left: 30px;
+		}
+		.glyphicon {
+			float: left;
+			margin-top: 2px;
+			margin-right: 10px;
+		}
+		form {
+			margin-left: 30px;
+		}
+		#loader {
+			display: none;
+			width: 250px;
+			float: left;
+		}
+        </style>
+        
 </head>
 
 <body>
@@ -108,7 +142,7 @@
                             </div>
                             <div class="row">
                                 <h5>Response:</h5>
-                                <img src="Kairos-SDK-Javascript-master/examples/assets/images/loading.gif" id="loader">
+                                <img src="assets/images/loading.gif" id="loader">
                                 <div id="view_data" class="col-lg-8"></div>
                             </div>
                         </div>
@@ -147,41 +181,6 @@
     <!-- <script src="./config.js"></script> -->
     <script src="./assets/javascript/stripe.js"></script>
     <script src="./assets/javascript/app.js"></script>
-
-<!--Enroll Script & Such-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<!--	<link href="Kairos-SDK-Javascript-master/examples/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="Kairos-SDK-Javascript-master/examples/assets/css/examplestyle.css" rel="stylesheet"> -->
-    <script src="Kairos-SDK-Javascript-master/kairos.js"></script>
-    <script src="Kairos-SDK-Javascript-master/examples/assets/js/methods_test.js"></script>
-    <style>
-    #view_data {
-        padding: 10px 0;
-        color: #ff0000;
-        word-wrap: break-word;
-    }
-    #authenticationError {
-        color: #ff0000;
-    }
-    .method-test {
-        margin-left: 30px;
-    }
-    .glyphicon {
-        float: left;
-        margin-top: 2px;
-        margin-right: 10px;
-    }
-    form {
-        margin-left: 30px;
-    }
-    #loader {
-        display: none;
-        width: 250px;
-        float: left;
-    }
-    </style>
-    
-<!--end enroll scripts-->
 </body>
 
 </html>
