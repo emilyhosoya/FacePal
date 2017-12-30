@@ -21,6 +21,7 @@ $(document).ready(function() {
     projectId: "facepal-a9ecc",
     storageBucket: "facepal-a9ecc.appspot.com",
     messagingSenderId: "603932838503"
+    // Dropbox Keys
   };
 
   let firstName = "";
@@ -83,7 +84,7 @@ $(document).ready(function() {
       <ul class="collection">
         <li class="collection-item">
           <div class="center-align">
-              <img src="./user_images/${img}" class="responsive-img" id="user-img">
+              <ul id="files"></ul>
           </div>
         </li>
         <li class="collection-item">Name:

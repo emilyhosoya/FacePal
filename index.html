@@ -4,7 +4,7 @@
 <head>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -69,6 +69,10 @@
                     </div>
                     <div class="card-content" id="new-user">
                     </div>
+                    <form onSubmit="return listFiles()">
+                        <input type="text" id="access-token" placeholder="Access token" />
+                        <button type="submit">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -99,6 +103,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
     <!-- <script src="./config.js"></script> -->
+    <script src="https://unpkg.com/dropbox/dist/Dropbox-sdk.min.js"></script>
+    <script src="./assets/javascript/dropbox.js"></script>
     <script src="./assets/javascript/stripe.js"></script>
     <script src="./assets/javascript/app.js"></script>
 </body>
