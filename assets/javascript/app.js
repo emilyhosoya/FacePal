@@ -53,6 +53,8 @@ $(document).ready(function() {
       .val()
       .trim();
 
+    enrollUser();
+
     ref.push({
       firstName: firstName,
       lastName: lastName,

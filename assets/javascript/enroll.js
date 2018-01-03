@@ -16,8 +16,8 @@ var enrollUser = function() {
   };
 
   var body = {
-    image: "http://media.kairos.com/kairos-elizabeth.jpg",
-    subject_id: "Elizabeth",
+    image: `${img}`,
+    subject_id: `${firstName}${lastName}`,
     gallery_name: "FirstGallery"
   };
 
