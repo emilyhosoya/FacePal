@@ -1,4 +1,8 @@
-var enrollUser = function() {
+//var firstName ='chad';
+//var lastName = 'chazmister';
+//var profileImage = 'https://upload.wikimedia.org/wikipedia/commons/e/e9/Official_portrait_of_Barack_Obama.jpg';
+
+var enrollUser = function (firstName,lastName,img) {
   var request = new XMLHttpRequest();
 
   request.open("POST", "https://api.kairos.com/enroll");
@@ -16,10 +20,16 @@ var enrollUser = function() {
   };
 
   var body = {
-    image: `${img}`,
-    subject_id: `${firstName}${lastName}`,
-    gallery_name: "FirstGallery"
+    'image': img ,
+    'subject_id': firstName+lastName,
+    'gallery_name': "FirstGallery",
   };
 
+  //test
+  console.log('enroll.js log' +img);
+  console.log('enroll.js log'+firstName);
+  console.log('enroll.js log'+lastName);
+  
   request.send(JSON.stringify(body));
+  
 };

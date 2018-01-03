@@ -53,7 +53,6 @@ $(document).ready(function() {
       .val()
       .trim();
 
-    enrollUser();
 
     ref.push({
       firstName: firstName,
@@ -63,8 +62,21 @@ $(document).ready(function() {
       img: img
     });
     $("input").val("");
+
+    //test
+    console.log('firebase log' + img);
+    console.log('firebase log' + firstName);
+    console.log('firebase log' + lastName);
   });
 
+  $("#submit").on("click", function() {
+    enrollUser(firstName,lastName,img);
+    //test
+    console.log('submit log' + img);
+    console.log('submit log' + firstName);
+    console.log('submit log' + lastName);
+  });
+  
   ref.on(
     "child_added",
     function(snapshot) {
