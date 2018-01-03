@@ -29,11 +29,12 @@
                                     <h4 class="center-align">Say cheese!</h4>
                                 </div>
 
-                                <!--Webcam HTML-->    
-                                <a href="#" onClick="webcamModule();">START CAMERA</a></br>
+                                <!--Webcam HTML-->
+                                <a href="#" onClick="webcamModule();">START CAMERA</a>
+                                </br>
                                 <video id="webcamVideo"></video>
                                 <div id="showCounter"></div>
-                                
+
                                 <div class="input-field right-align">
                                     <button class="btn" id="submit" type="submit" name="action">Submit
                                         <i class="material-icons right">send</i>
@@ -58,17 +59,17 @@
 
     <!--Webcam Script-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script>
+    <script>
         var webcamModule = function () {
             var streaming = false;
             var video = null;
             (function () {
                 video = document.getElementById('webcamVideo');
-                navigator.mediaDevices.getUserMedia({audio: false, video: true}).then(
-                    function(stream) {
+                navigator.mediaDevices.getUserMedia({ audio: false, video: true }).then(
+                    function (stream) {
                         if (navigator.mozGetUserMedia) {
-                          video.mozSrcObject = stream;
-                        } 
+                            video.mozSrcObject = stream;
+                        }
                         else {
                             var vendorURL = window.URL || window.webkitURL;
                             video.src = vendorURL.createObjectURL(stream);
@@ -76,17 +77,17 @@
                         video.play();
                         localStream = stream.getTracks()[0];
                     }
-                ).catch(function(err) {
-                        console.log(err)
-                    });
-                video.addEventListener('canplay', function(ev){
+                ).catch(function (err) {
+                    console.log(err)
+                });
+                video.addEventListener('canplay', function (ev) {
                     if (!streaming) {
                         video.setAttribute('width', '400');
                         video.setAttribute('height', '300');
                         streaming = true;
                     }
-                    var captureInterval = 3000;
-                    var countdown = captureInterval/1000;
+                    var captureInterval = 5000;
+                    var countdown = captureInterval / 1000;
                     var counterFunction = setInterval(function () {
                         $("#showCounter").html(countdown);
                         if (countdown <= 0) {
@@ -94,12 +95,12 @@
                             clearInterval(counterFunction);
                             localStream.stop();
                         }
-                        countdown --;
-                    },1000);
-                },  false);
+                        countdown--;
+                    }, 1000);
+                }, false);
             })();
         };
-        var takepicture = function(video) {
+        var takepicture = function (video) {
             $("#showCounter").html("Retrieving data...");
             var canvas = document.createElement('CANVAS');
             var context = canvas.getContext('2d');
@@ -112,7 +113,7 @@
             $(video).hide();
             console.log(imageData)///return
         }
-	</script>
+    </script>
 
 </body>
 
