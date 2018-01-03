@@ -9,3 +9,28 @@
 .collection-item img {
   max-width: 200px;
 }
+
+#view_data {
+  padding: 10px 0;
+  color: #ff0000;
+  word-wrap: break-word;
+}
+#authenticationError {
+  color: #ff0000;
+}
+.method-test {
+  margin-left: 30px;
+}
+.glyphicon {
+  float: left;
+  margin-top: 2px;
+  margin-right: 10px;
+}
+/* form {
+  margin-left: 30px;
+} */
+#loader {
+  display: none;
+  width: 250px;
+  float: left;
+}
