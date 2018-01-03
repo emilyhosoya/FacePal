@@ -74,9 +74,19 @@
       <script src="./assets/javascript/app.js"></script>
 
       <!--Kiros Script-->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
 
         <script>
+        //Get
+        var nameValue = $('#first-name').val();
+
+        //Set
+        //$('#first-name').val(bla);
+
+        console.log("i AM TESTING SOMETHOING", nameValue);
+
+
+        var enrollUser = function () {   
         var request = new XMLHttpRequest();
 
         request.open('POST', 'https://api.kairos.com/enroll');
@@ -100,6 +110,8 @@
         };
 
         request.send(JSON.stringify(body));
+        }
+        
         </script>
    </body>
 </html>
