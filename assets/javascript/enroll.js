@@ -20,7 +20,7 @@ var enrollUser = function (firstName,lastName,img) {
   };
 
   var body = {
-    'image': img ,
+    'image': 'http://wildwestfareast.com/FacePal/user_images/' + img ,
     'subject_id': firstName+lastName,
     'gallery_name': "FirstGallery",
   };

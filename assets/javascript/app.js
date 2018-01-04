@@ -32,6 +32,9 @@ $(document).ready(function() {
   let img = "";
   let paymentTokens = [];
 
+
+  
+
   firebase.initializeApp(config);
   let ref = firebase.database().ref();
   // Initialize Materialize elements
@@ -69,7 +72,7 @@ $(document).ready(function() {
     console.log('firebase log' + lastName);
   });
 
-  $("#submit").on("click", function() {
+  $("#enrollButton").on("click", function() {
     enrollUser(firstName,lastName,img);
     //test
     console.log('submit log' + img);
@@ -113,6 +116,8 @@ $(document).ready(function() {
     },
     function(errorObject) {
       console.log("Errors handled: " + errorObject.code);
+      
     }
   );
+
 });
