@@ -1,15 +1,26 @@
 body {
-  background-color: #fee140;
-  background-image: linear-gradient(90deg, #fee140 0%, #fa709a 100%);
+  background: url("../images/Depositphotos_11189888_l-2015.jpg") no-repeat
+    center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /* background-color: #fee140; */
+  /* background-image: linear-gradient(90deg, #fee140 0%, #fa709a 100%); */
 }
 
-.btn,
-.btn:hover {
-  background-color: #fa709a;
+nav {
+  padding: 0px 20px;
+  background: transparent;
+  box-shadow: none;
 }
 
-.btn:hover {
-  opacity: 0.8;
+.card {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.card .card-action {
+  background: transparent;
 }
 
 .card-title {
