@@ -33,9 +33,9 @@ $(document).ready(function() {
   let paymentTokens = [];
 
   //verify base64 holder
-  let verifyImage = "";
+  let verifyImage = imageData;
 
-
+  console.log(imageData);
   
 
   firebase.initializeApp(config);

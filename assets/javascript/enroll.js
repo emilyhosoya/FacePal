@@ -26,7 +26,7 @@ var enrollUser = function (firstName,lastName,img) {
   };
 
   //test
-  console.log('enroll.js log' +img);
+  console.log('enroll.js log'+img);
   console.log('enroll.js log'+firstName);
   console.log('enroll.js log'+lastName);
   

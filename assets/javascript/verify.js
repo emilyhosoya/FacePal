@@ -1,3 +1,5 @@
+var verifyUser = function(firstName,lastName,verify) {
+
 var request = new XMLHttpRequest() 
 
 request.open('POST', 'https://api.kairos.com/verify');
@@ -23,3 +25,5 @@ var body = {
 };
 
 request.send(JSON.stringify(body));
+
+};
