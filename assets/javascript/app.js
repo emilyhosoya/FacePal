@@ -32,6 +32,9 @@ $(document).ready(function() {
   let img = "";
   let paymentTokens = [];
 
+  //verify base64 holder
+  let verifyImage = "";
+
 
   
 
@@ -72,6 +75,7 @@ $(document).ready(function() {
     console.log('firebase log' + lastName);
   });
 
+  //Page 2 Enroll Button 
   $("#enrollButton").on("click", function() {
     enrollUser(firstName,lastName,img);
     //test
@@ -80,6 +84,15 @@ $(document).ready(function() {
     console.log('submit log' + lastName);
   });
   
+  //Page 3 Webcam Verify Button
+  $("#verifyButton").on("click", function() {
+    verifyUser(firstName,lastName,img);
+    //test
+    console.log('submit log' + verifyImage);
+    console.log('submit log' + firstName);
+    console.log('submit log' + lastName);
+  });
+
   ref.on(
     "child_added",
     function(snapshot) {
