@@ -55,3 +55,5 @@ var takepicture = function(video) {
   $(video).hide();
   console.log(imageData); ///return
 };
+  
+
