@@ -33,7 +33,7 @@ $(document).ready(function() {
   let paymentTokens = [];
 
   //verify base64 holder
-  let imageData = "";
+  //let imageData = "";
   //let verifyImage = imageData;
 
   console.log(imageData);
@@ -86,13 +86,13 @@ $(document).ready(function() {
   });
   
   //Page 3 Webcam Verify Button
-  $("#verifyButton").on("click", function() {
-    verifyUser(firstName,lastName,imageData);
-    //test
-    console.log('submit log' + imageData);
-    console.log('submit log' + firstName);
-    console.log('submit log' + lastName);
-  });
+  // $("#verifyButton").on("click", function() {
+  //   verifyUser(firstName,lastName,imageData);
+  //   //test
+  //   console.log('submit log' + imageData);
+  //   console.log('submit log' + firstName);
+  //   console.log('submit log' + lastName);
+  // });
 
   ref.on(
     "child_added",
