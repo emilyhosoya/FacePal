@@ -34,5 +34,16 @@ var verifyUser = function(firstName,lastName,verifyImage) {
 
     request.send(JSON.stringify(body));
 
+
+    // if confidence is greater than .6, show modal
+    // $("#modal-header").text("Success!");
+    // $("#modal-message").text("Your payment has been sent.");
+    //  // else show failure message in modal
+    // $("#modal-header").text("Uh oh!");
+    // $("#modal-message").text("You aren't the authorized user for this transaction.");
+    // $('.modal').modal();
+    // $('#modal1').modal('open');
+         
+
 };
 
