@@ -2,6 +2,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script>
+
+var firstName ='chad';
+var lastName = 'chazmister';
+var profileImage = 'https://upload.wikimedia.org/wikipedia/commons/e/e9/Official_portrait_of_Barack_Obama.jpg';
+
+var enrollUser = function() {
 var request = new XMLHttpRequest();
 
 request.open('POST', 'https://api.kairos.com/enroll');
@@ -19,12 +25,17 @@ request.onreadystatechange = function () {
 };
 
 var body = {
-  'image': 'http://media.kairos.com/kairos-elizabeth.jpg',
-  'subject_id': 'Elizabeth',
+  'image': profileImage,
+  'subject_id': firstName + lastName,
   'gallery_name': 'FirstGallery'
 };
+console.log(body.image);
+console.log(body.subject_id);
+console.log(body.gallery_name);
 
 request.send(JSON.stringify(body));
+}
+enrollUser();
 </script>
 
 

@@ -32,6 +32,13 @@ $(document).ready(function() {
   let img = "";
   let paymentTokens = [];
 
+  //verify base64 holder
+  let imageData = "";
+  //let verifyImage = imageData;
+
+  console.log(imageData);
+  
+
   firebase.initializeApp(config);
   let ref = firebase.database().ref();
   // Initialize Materialize elements
@@ -53,6 +60,7 @@ $(document).ready(function() {
       .val()
       .trim();
 
+
     ref.push({
       firstName: firstName,
       lastName: lastName,
@@ -61,6 +69,29 @@ $(document).ready(function() {
       img: img
     });
     $("input").val("");
+
+    //test
+    console.log('firebase log' + img);
+    console.log('firebase log' + firstName);
+    console.log('firebase log' + lastName);
+  });
+
+  //Page 2 Enroll Button 
+  $("#enrollButton").on("click", function() {
+    enrollUser(firstName,lastName,img);
+    //test
+    console.log('submit log' + img);
+    console.log('submit log' + firstName);
+    console.log('submit log' + lastName);
+  });
+  
+  //Page 3 Webcam Verify Button
+  $("#verifyButton").on("click", function() {
+    verifyUser(firstName,lastName,imageData);
+    //test
+    console.log('submit log' + imageData);
+    console.log('submit log' + firstName);
+    console.log('submit log' + lastName);
   });
 
   ref.on(
@@ -83,7 +114,8 @@ $(document).ready(function() {
       <ul class="collection">
         <li class="collection-item">
           <div class="center-align">
-              <img src="./user_images/${img}" class="responsive-img" id="user-img">
+              <ul id="files"></ul>
+              <img src="./user_images/${img}" class="img-fluid" id="user-img">
           </div>
         </li>
         <li class="collection-item">Name:
@@ -98,6 +130,8 @@ $(document).ready(function() {
     },
     function(errorObject) {
       console.log("Errors handled: " + errorObject.code);
+      
     }
   );
+
 });

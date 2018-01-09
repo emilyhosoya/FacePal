@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
-   <head>
+
+<head>
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
       <link rel="stylesheet" href="./assets/css/style.css">
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,102 +17,40 @@
       <link href="Kairos-SDK-Javascript-master/examples/assets/css/examplestyle.css" rel="stylesheet">
       <script src="Kairos-SDK-Javascript-master/kairos.js"></script>
       <script src="Kairos-SDK-Javascript-master/examples/assets/js/methods_test.js"></script>
-      <style>
-         #view_data {
-         padding: 10px 0;
-         color: #ff0000;
-         word-wrap: break-word;
-         }
-         #authenticationError {
-         color: #ff0000;
-         }
-         .method-test {
-         margin-left: 30px;
-         }
-         .glyphicon {
-         float: left;
-         margin-top: 2px;
-         margin-right: 10px;
-         }
-         form {
-         margin-left: 30px;
-         }
-         #loader {
-         display: none;
-         width: 250px;
-         float: left;
-         }
-      </style>
+
       <!--end enroll scripts-->
-   </head>
-   <body>
-      <div class="container">
+</head>
+
+<body>
+      <div class="container animated fadeIn">
             <div class="row">
-                  <div class="col s12 m6">
+                  <div class="col s12 m6 offset-m3">
                         <div class="card">
                               <div class="card-title center-align">
                                     <h4>Your Info</h4>
                               </div>
-                                    <!--Account Info-->
+                              <!--Account Info-->
                               <div class="card-content" id="new-user">
                               </div>
-                              
-                              
-                              <!--Enroll-->
 
-                              <div class="card-content">
-                              <h3>Enter API Keys:</h3>
-                              <form>
-                                    APP ID: <input type="text" id="app_id" class="app-key" value="">
-                                    APP KEY: <input type="text" id="app_key" class="app-key" value="">
-                                    <input type="button" id="enterApiKeys" value="Enter" />
-                              </form>
-                              <div id="authenticationError"></div>
-                              </div>
-                              <div id="apiMethodsTests">
-                                    <h3>Test API Methods</h3>
+                              <div class="input-field right-align">
+                                    <button class="btn" id="enrollButton" type="submit" name="action">Submit
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </div>
+    
 
-                                    <!--Method-->
-                                    <div class="row">
-                                          <div class="method-test">
-                                                <span class="glyphicon glyphicon-play"></span>
-                                                <h4>enroll() Method</h4>
-                                                <form id="enrollForm" style="width: inherit">
-                                                Image (public URL or base64 data): <input type="text" class="image" name="Image">
-                                                Image (local file): <input type="file" class="image-upload" name="Image Upload">
-                                                Gallery Name: <input type="text" class="gallery_name" name="Gallery Name">
-                                                Subject ID: <input type="text" class="subject_id" name="Subject ID">
-                                                <input type="button" id="testEnroll" value="Test" />
-                                                </form>
-                                          </div>
-                                    </div>
-                                    <div class="row">
-                                          <h5>Time:</h5>
-                                          <div id="timer" class="col-lg-5"></div>
-                                    </div>
-                                    <div class="row">
-                                          <h5>Response:</h5>
-                                          <img src="assets/images/loading.gif" id="loader">
-                                          <div id="view_data" class="col-lg-5"></div>
-                                    </div>
-                              </div>
-                        </div>
-                  </div>
-            </div>
-      
-            <div class="row">
-                  <div class="col-sm-6">
-                        <div id="stripe">
-                              <div class="card">
-                                    <div class="card-content center-align">
-                                          <h5>Now you can pay!</h5>
-                                          <form action="./verify.html" method="POST">
+                              <div class="center-align" id="stripe">
+                                    <h5>Now you can pay!</h5>
+                                    <form action="./verify.html" method="POST">
                                           <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh" data-amount="999"
                                                 data-name="Stripe.com" data-description="Widget" data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
                                                 data-locale="auto" data-zip-code="true"></script>
-                                          </form>
-                                    </div>
+                                    </form>
                               </div>
+
+
+
                         </div>
                   </div>
             </div>
@@ -124,7 +64,8 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
       <!-- <script src="./config.js"></script> -->
-      <script src="./assets/javascript/stripe.js"></script>
+      <script src="./assets/javascript/enroll.js"></script>
       <script src="./assets/javascript/app.js"></script>
-   </body>
+</body>
+
 </html>
