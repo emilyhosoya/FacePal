@@ -36,7 +36,7 @@ $(document).ready(function() {
   //let imageData = "";
   //let verifyImage = imageData;
 
-  console.log(imageData);
+  //console.log(imageData);
   
 
   firebase.initializeApp(config);
