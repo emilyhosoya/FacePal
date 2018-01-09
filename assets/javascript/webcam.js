@@ -49,8 +49,8 @@ var webcamModule = function() {
       "canplay",
       function(ev) {
         if (!streaming) {
-          video.setAttribute("width", "200");
-          video.setAttribute("height", "300");
+          video.setAttribute("width", "600");
+          video.setAttribute("height", "450");
           streaming = true;
         }
         var captureInterval = 5000;
@@ -80,8 +80,8 @@ var takepicture = function(video) {
   $("#showCounter").html("Retrieving data...");
   var canvas = document.createElement("CANVAS");
   var context = canvas.getContext("2d");
-  canvas.width = "200";
-  canvas.height = "300";
+  canvas.width = "600";
+  canvas.height = "450";
   // draw video image onto canvas, get data
   context.drawImage(video, 0, 0);
   var imageData = canvas.toDataURL("image/png");
