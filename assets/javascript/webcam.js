@@ -90,7 +90,7 @@ var takepicture = function(video) {
   console.log(imageData); ///return
 
   //return imageData;
-  verifyImage = 'http://wildwestfareast.com/FacePal/user_images/testFace.jpg';
+  verifyImage = imageData.split(',')[1];
   
 
 
