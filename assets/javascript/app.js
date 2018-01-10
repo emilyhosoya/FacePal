@@ -33,7 +33,8 @@ $(document).ready(function() {
   let paymentTokens = [];
 
   //verify base64 holder
-  let verifyImage = imageData;
+  let imageData = "";
+  //let verifyImage = imageData;
 
   console.log(imageData);
   
@@ -86,9 +87,9 @@ $(document).ready(function() {
   
   //Page 3 Webcam Verify Button
   $("#verifyButton").on("click", function() {
-    verifyUser(firstName,lastName,img);
+    verifyUser(firstName,lastName,imageData);
     //test
-    console.log('submit log' + verifyImage);
+    console.log('submit log' + imageData);
     console.log('submit log' + firstName);
     console.log('submit log' + lastName);
   });
