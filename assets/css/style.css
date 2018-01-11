@@ -33,6 +33,10 @@ input {
   color: white;
 }
 
+.modal input {
+  color: black;
+}
+
 .collection {
   border: transparent;
 }
