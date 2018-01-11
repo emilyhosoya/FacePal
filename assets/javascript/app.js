@@ -33,10 +33,10 @@ $(document).ready(function() {
   let paymentTokens = [];
 
   //verify base64 holder
-  let verifyImage = imageData;
+  //let imageData = "";
+  //let verifyImage = imageData;
 
-  console.log(imageData);
-  
+  //console.log(imageData);
 
   firebase.initializeApp(config);
   let ref = firebase.database().ref();
@@ -59,7 +59,6 @@ $(document).ready(function() {
       .val()
       .trim();
 
-
     ref.push({
       firstName: firstName,
       lastName: lastName,
@@ -70,28 +69,42 @@ $(document).ready(function() {
     $("input").val("");
 
     //test
-    console.log('firebase log' + img);
-    console.log('firebase log' + firstName);
-    console.log('firebase log' + lastName);
+    console.log("firebase log" + img);
+    console.log("firebase log" + firstName);
+    console.log("firebase log" + lastName);
   });
 
-  //Page 2 Enroll Button 
+  //Page 2 Enroll Button
   $("#enrollButton").on("click", function() {
-    enrollUser(firstName,lastName,img);
+    enrollUser(firstName, lastName, img);
     //test
-    console.log('submit log' + img);
-    console.log('submit log' + firstName);
-    console.log('submit log' + lastName);
+    console.log("submit log" + img);
+    console.log("submit log" + firstName);
+    console.log("submit log" + lastName);
   });
-  
-  //Page 3 Webcam Verify Button
+
   $("#verifyButton").on("click", function() {
-    verifyUser(firstName,lastName,img);
-    //test
-    console.log('submit log' + verifyImage);
-    console.log('submit log' + firstName);
-    console.log('submit log' + lastName);
+    var testFirst = firstName;
+    var testLast = lastName;
+
+    //TestPrint
+    console.log("Test Button");
+    console.log("Verify Image Test" + verifyImage);
+
+    console.log("Input Parms to verifyUser");
+    console.log(testFirst);
+    console.log(testLast);
+    //Call api and pass in verifyIMage
+    verifyUser(testFirst, testLast, verifyImage);
   });
+  //Page 3 Webcam Verify Button
+  // $("#verifyButton").on("click", function() {
+  //   verifyUser(firstName,lastName,imageData);
+  //   //test
+  //   console.log('submit log' + imageData);
+  //   console.log('submit log' + firstName);
+  //   console.log('submit log' + lastName);
+  // });
 
   ref.on(
     "child_added",
@@ -129,8 +142,6 @@ $(document).ready(function() {
     },
     function(errorObject) {
       console.log("Errors handled: " + errorObject.code);
-      
     }
   );
-
 });
