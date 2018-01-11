@@ -3,20 +3,20 @@ let verifyImage = "";
 
 
   //Page 3 Webcam Verify Button
-  $("#verifyButton").on("click", function() {
-    var testFirst = firstName;
-    var testLast = lastName;
+  // $("#verifyButton").on("click", function() {
+  //   var testFirst = firstName;
+  //   var testLast = lastName;
     
-    //TestPrint
-    console.log("Test Button");
-    console.log("Verify Image Test" + verifyImage);
+  //   //TestPrint
+  //   console.log("Test Button");
+  //   console.log("Verify Image Test" + verifyImage);
 
-    console.log("Input Parms to verifyUser");
-    console.log(testFirst);
-    console.log(testLast);
-    //Call api and pass in verifyIMage
-    verifyUser(testFirst, testLast, verifyImage);
-  });
+  //   console.log("Input Parms to verifyUser");
+  //   console.log(testFirst);
+  //   console.log(testLast);
+  //   //Call api and pass in verifyIMage
+  //   verifyUser(testFirst, testLast, verifyImage);
+  // });
 
 var webcamModule = function() {
   var streaming = false;
