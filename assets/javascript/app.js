@@ -61,19 +61,16 @@ $(document).ready(function() {
       password: "Password is required",
       img: "An image is required for facial recognition"
     },
-    // submitHandler: function(form) {
-    //     // do other things for a valid form
-    //     form.submit();
-    //  }
-    // errorElement : 'div',
-    // errorPlacement: function(error, element) {
-    //   var placement = $(element).data('error');
-    //   if (placement) {
-    //     $(placement).append(error)
-    //   } else {
-    //     error.insertAfter(element);
-    //   }
-    //  }
+  
+    errorElement : 'div',
+    errorPlacement: function(error, element) {
+      var placement = $(element).data('error');
+      if (placement) {
+        $(placement).append(error)
+      } else {
+        error.insertAfter(element);
+      }
+     }
   
   });
   }

@@ -35,6 +35,10 @@ input {
   color: white;
 }
 
+div.error {
+  color: red;
+}
+
 .collection {
   border: transparent;
 }
