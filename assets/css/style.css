@@ -10,7 +10,7 @@ body {
 }
 h4,
 .collection .collection-item {
-  color: white !important;
+  color: white;
 }
 
 nav {

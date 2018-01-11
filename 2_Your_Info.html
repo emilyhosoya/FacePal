@@ -13,7 +13,7 @@
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <!--Enroll Script & Such-->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-      <link href="Kairos-SDK-Javascript-master/examples/assets/css/bootstrap.min.css" rel="stylesheet">
+      <!-- <link href="Kairos-SDK-Javascript-master/examples/assets/css/bootstrap.min.css" rel="stylesheet"> -->
       <link href="Kairos-SDK-Javascript-master/examples/assets/css/examplestyle.css" rel="stylesheet">
       <script src="Kairos-SDK-Javascript-master/kairos.js"></script>
       <script src="Kairos-SDK-Javascript-master/examples/assets/js/methods_test.js"></script>
@@ -22,6 +22,19 @@
 </head>
 
 <body>
+      <div class="navbar-fixed">
+            <nav>
+                  <div class="nav-wrapper">
+                        <div class="col s12">
+                              <a href="./index.html" class="right">Home</a>
+                              <span id="nav-mobile" class="left hide-on-med-and-down">
+                                    <a href="./1_Create_Your_Profile.html" class="breadcrumb">Enroll New User</a>
+                                    <a href="./2_Your_Info.html" class="breadcrumb">Initiate Payment</a>
+                              </span>
+                        </div>
+                  </div>
+            </nav>
+      </div>
       <div class="container animated fadeIn">
             <div class="row">
                   <div class="col s12 m10 offset-m1">
@@ -32,14 +45,11 @@
                               <!--Account Info-->
                               <div class="card-content" id="new-user">
                               </div>
-
                               <div class="input-field right-align">
                                     <button class="btn" id="enrollButton" type="submit" name="action">Submit
                                           <i class="material-icons right">send</i>
                                     </button>
                               </div>
-
-
                               <div class="center-align" id="stripe">
                                     <h5>Now you can pay!</h5>
                                     <form action="./verify.html" method="POST">
