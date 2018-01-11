@@ -1,14 +1,3 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-li {
-  color: white;
-}
-
 body {
   background: url("../images/Depositphotos_11189888_l-2015.jpg") no-repeat
     center center fixed;
@@ -18,6 +7,9 @@ body {
   background-size: cover;
   /* background-color: #fee140; */
   /* background-image: linear-gradient(90deg, #fee140 0%, #fa709a 100%); */
+}
+h4 {
+  color: white;
 }
 
 nav {
@@ -36,6 +28,9 @@ nav {
 
 .card-title {
   padding-top: 0.1rem;
+}
+input {
+  color: white;
 }
 
 .collection {
