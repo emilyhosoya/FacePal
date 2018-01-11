@@ -1,4 +1,4 @@
-verifyString = "";
+//let verifyString = "";
 
 var verifyUser = function(firstName,lastName,verifyImage) {
 
