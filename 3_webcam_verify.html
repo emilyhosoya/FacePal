@@ -19,7 +19,7 @@
     <div class="container animated fadeIn">
         <div class="row">
             <div class="col s12 m8 offset-m2">
-                <div id="new-user">
+                <div>
                     <div class="card">
                         <div class="card-title center-align">
                             <h1>FacePal - Verify Your Face</h1>
@@ -37,7 +37,7 @@
                                 <div id="showCounter"></div>
 
                                 <div class="input-field right-align">
-                                    <button class="btn" id="submit" type="submit" name="action">Submit
+                                    <button class="btn" id="verifyButton" type="submit" name="action">Verify
                                         <i class="material-icons right">send</i>
                                     </button>
                                 </div>
@@ -48,6 +48,19 @@
             </div>
         </div>
     </div>
+    <div id="writeIt">
+
+        <!-- Modal Structure -->
+        <!-- <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4 id="modal-header"></h4>
+      <p id="modal-message"></p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div> -->
+    </div>
     <!--Import jQuery before materialize.js-->
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -55,7 +68,8 @@
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
     <script src="./assets/javascript/webcam.js"></script>
-
+    <script src="./assets/javascript/verify.js"></script>
+    <script src="./assets/javascript/app.js"></script>
 </body>
 
 </html>
