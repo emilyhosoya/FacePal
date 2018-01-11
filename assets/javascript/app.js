@@ -64,20 +64,16 @@ $(document).ready(function() {
         dob: "Date of birth is required",
         password: "Password is required",
         img: "An image is required for facial recognition"
+      },
+      errorElement: "div",
+      errorPlacement: function(error, element) {
+        var placement = $(element).data("error");
+        if (placement) {
+          $(placement).append(error);
+        } else {
+          error.insertAfter(element);
+        }
       }
-      // submitHandler: function(form) {
-      //     // do other things for a valid form
-      //     form.submit();
-      //  }
-      // errorElement : 'div',
-      // errorPlacement: function(error, element) {
-      //   var placement = $(element).data('error');
-      //   if (placement) {
-      //     $(placement).append(error)
-      //   } else {
-      //     error.insertAfter(element);
-      //   }
-      //  }
     });
   }
   // Initialize Materialize elements

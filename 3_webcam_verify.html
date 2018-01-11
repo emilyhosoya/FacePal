@@ -16,22 +16,34 @@
 </head>
 
 <body>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <div class="col s12">
+                    <a href="./index.html" class="right">Home</a>
+                    <span id="nav-mobile" class="left hide-on-med-and-down">
+                        <a href="./1_Create_Your_Profile.html" class="breadcrumb">Enroll New User</a>
+                        <a href="./2_Your_Info.html" class="breadcrumb">Initiate Payment</a>
+                        <a href="./3_webcam_verify.html" class="breadcrumb">Verify User</a>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </div>
     <div class="container animated fadeIn">
         <div class="row">
             <div class="col s12 m8 offset-m2">
                 <div>
                     <div class="card">
                         <div class="card-title center-align">
-                            <h1>FacePal - Verify Your Face</h1>
+                            <h4>Say cheese!</h4>
                         </div>
                         <div class="card-content">
                             <form action="#">
-                                <div class="row">
-                                    <h4 class="center-align">Say cheese!</h4>
+                                <div class="center-align">
+                                    <!--Webcam HTML-->
+                                    <a class="btn" href="#" onClick="webcamModule();">START CAMERA</a>
                                 </div>
-
-                                <!--Webcam HTML-->
-                                <a href="#" onClick="webcamModule();">START CAMERA</a>
                                 </br>
                                 <video id="webcamVideo"></video>
                                 <div id="showCounter"></div>
