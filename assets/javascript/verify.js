@@ -1,4 +1,4 @@
-
+verifyString = "";
 
 var verifyUser = function(firstName,lastName,verifyImage) {
 
@@ -22,7 +22,10 @@ var verifyUser = function(firstName,lastName,verifyImage) {
         console.log('Headers:', this.getAllResponseHeaders());
         console.log('Body:', this.responseText);
         
-        document.getElementById("writeIt").innerHTML = this.responseText;//added
+        verifyString = this.responseText;
+        console.log("verifyString Test", verifyString);
+        
+        //document.getElementById("writeIt").innerHTML = this.responseText;//added
     }
     };
 
@@ -34,7 +37,11 @@ var verifyUser = function(firstName,lastName,verifyImage) {
 
     request.send(JSON.stringify(body));
 
-
+    // if(images[0].transaction.confidence > 0.60){
+    //     console.log("Success!")
+    // } else {
+    //     console.log("Failure")
+    // }
     // if confidence is greater than .6, show modal
     // $("#modal-header").text("Success!");
     // $("#modal-message").text("Your payment has been sent.");

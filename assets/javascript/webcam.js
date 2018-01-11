@@ -4,8 +4,8 @@ let verifyImage = "";
 
   //Page 3 Webcam Verify Button
   $("#verifyButton").on("click", function() {
-    var testFirst = "Garvis";
-    var testLast = "Sloane";
+    var testFirst = firstName;
+    var testLast = lastName;
     
     //TestPrint
     console.log("Test Button");
