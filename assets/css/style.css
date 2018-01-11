@@ -8,8 +8,9 @@ body {
   /* background-color: #fee140; */
   /* background-image: linear-gradient(90deg, #fee140 0%, #fa709a 100%); */
 }
-h4 {
-  color: white;
+h4,
+.collection .collection-item {
+  color: white !important;
 }
 
 nav {
@@ -22,7 +23,8 @@ nav {
   background: rgba(0, 0, 0, 0.6);
 }
 
-.card .card-action {
+.card .card-action,
+.collection .collection-item {
   background: transparent;
 }
 
