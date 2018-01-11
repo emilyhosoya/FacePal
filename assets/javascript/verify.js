@@ -1,10 +1,14 @@
 //let verifyString = "";
+// function afterload (){
+
+// } ;
 
 var verifyUser = function(firstName, lastName, verifyImage) {
-  console.log("inside verifyUser");
-  console.log("My Input Parms");
-  console.log(firstName + lastName);
-  console.log("verifyImage" + verifyImage);
+  async: false,//added for timing
+  console.log("1 inside verifyUser");
+  console.log("2 My Input Parms");
+  console.log("3" + firstName + lastName);
+  console.log("4 verifyImage" + verifyImage);
 
   var request = new XMLHttpRequest();
 
@@ -16,13 +20,12 @@ var verifyUser = function(firstName, lastName, verifyImage) {
 
   request.onreadystatechange = function() {
     if (this.readyState === 4) {
-      console.log("Status:", this.status);
-      console.log("Headers:", this.getAllResponseHeaders());
-      console.log("Body:", this.responseText);
+      console.log("5 Status:", this.status);
+      console.log("6 Headers:", this.getAllResponseHeaders());
+      console.log("7 Body:", this.responseText);//.ajaxComplete.afterload();
 
-      verifyString = this.responseText;
-      console.log("verifyString Test", verifyString);
-
+      //verifyString = this.responseText;
+     // console.log("8 verifyString Test", verifyString);
       //document.getElementById("writeIt").innerHTML = this.responseText;//added
     }
   };
@@ -34,6 +37,7 @@ var verifyUser = function(firstName, lastName, verifyImage) {
   };
 
   request.send(JSON.stringify(body));
+  //console.log("111111");
 
   // if(images[0].transaction.confidence > 0.60){
   //     console.log("Success!")
