@@ -32,7 +32,7 @@ var verifyUser = function(testFirst, testLast, verifyString) {
     subject_id: testFirst + testLast ,
   };
 
-  console.log('verify.js verify user param '+ firstName + lastName + " " + verifyString);
+  console.log('verify.js verify user param '+ testFirst + testLast + " " + verifyString);
 
   request.send(JSON.stringify(body));
   //console.log("111111");
