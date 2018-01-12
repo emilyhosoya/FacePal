@@ -129,7 +129,7 @@ $(document).ready(function() {
 
 
     //TestPrint
-    console.log("Verify Button test: Input Parms to verifyUser " + testFirst + testLast + verifystring);
+    console.log("App.js Verify Button test: Input Parms to verifyUser " + testFirst + testLast + verifyString);
     //Call api and pass in verifyIMage
     verifyUser(testFirst, testLast, verifystring);
   });
