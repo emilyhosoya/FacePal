@@ -125,7 +125,7 @@ $(document).ready(function() {
   $("#verifyButton").on("click", function() {
     var testFirst = firstName;
     var testLast = lastName;
-    var varifyString = verifyImage;
+    var verifyString = verifyImage;
 
 
     //TestPrint
