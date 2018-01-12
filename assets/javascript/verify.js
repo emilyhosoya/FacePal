@@ -1,14 +1,12 @@
 //let verifyString = "";
-// function afterload (){
 
-// } ;
 
-var verifyUser = function(firstName, lastName, verifyImage) {
+var verifyUser = function(testFirst, testLast, verifyString) {
   async: false,//added for timing
   console.log("1 inside verifyUser");
   console.log("2 My Input Parms");
-  console.log("3" + firstName + lastName);
-  console.log("4 verifyImage" + verifyImage);
+  console.log("3" + testFirst + testLast);
+  console.log("4 verifyString" + verifyString);
 
   var request = new XMLHttpRequest();
 
@@ -31,9 +29,9 @@ var verifyUser = function(firstName, lastName, verifyImage) {
   };
 
   var body = {
-    image: verifyImage,
+    image: verifyString,
     gallery_name: "FirstGallery",
-    subject_id: firstName + lastName
+    subject_id: testFirst + testLast
   };
 
   request.send(JSON.stringify(body));

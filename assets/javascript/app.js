@@ -32,12 +32,6 @@ $(document).ready(function() {
   let img = "";
   let paymentTokens = [];
 
-  //verify base64 holder
-  //let imageData = "";
-  //let verifyImage = imageData;
-
-  //console.log(imageData);
-
   firebase.initializeApp(config);
   let ref = firebase.database().ref();
 
@@ -131,16 +125,13 @@ $(document).ready(function() {
   $("#verifyButton").on("click", function() {
     var testFirst = firstName;
     var testLast = lastName;
+    var varifyString = verifyImage;
+
 
     //TestPrint
-    console.log("Test Button");
-    console.log("Verify Image Test" + verifyImage);
-
-    console.log("Input Parms to verifyUser");
-    console.log(testFirst);
-    console.log(testLast);
+    console.log("Verify Button test: Input Parms to verifyUser " + testFirst + testLast + verifystring);
     //Call api and pass in verifyIMage
-    verifyUser(testFirst, testLast, verifyImage);
+    verifyUser(testFirst, testLast, verifystring);
   });
   //Page 3 Webcam Verify Button
   // $("#verifyButton").on("click", function() {
