@@ -2,11 +2,9 @@
 
 
 var verifyUser = function(testFirst, testLast, verifyString) {
-  async: false,//added for timing
-  console.log("1 inside verifyUser");
-  console.log("2 My Input Parms");
-  console.log("3" + testFirst + testLast);
-  console.log("4 verifyString" + verifyString);
+  // async: false,//added for timing
+  // console.log("1: verify.js inside verifyUser" + testFirst + testLast + " " + verifyString);
+
 
   var request = new XMLHttpRequest();
 
@@ -18,9 +16,9 @@ var verifyUser = function(testFirst, testLast, verifyString) {
 
   request.onreadystatechange = function() {
     if (this.readyState === 4) {
-      console.log("5 Status:", this.status);
-      console.log("6 Headers:", this.getAllResponseHeaders());
-      console.log("7 Body:", this.responseText);//.ajaxComplete.afterload();
+      console.log("Status:", this.status);
+      console.log("Headers:", this.getAllResponseHeaders());
+      console.log("Body:", this.responseText);//.ajaxComplete.afterload();
 
       //verifyString = this.responseText;
      // console.log("8 verifyString Test", verifyString);
@@ -33,6 +31,8 @@ var verifyUser = function(testFirst, testLast, verifyString) {
     gallery_name: "FirstGallery",
     subject_id: testFirst + testLast ,
   };
+
+  console.log('verify.js verify user param '+ firstName + lastName + " " + verifyString);
 
   request.send(JSON.stringify(body));
   //console.log("111111");
