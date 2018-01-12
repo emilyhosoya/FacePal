@@ -1,4 +1,5 @@
 
+
 var verifyUser = function(firstName, lastName, verifyImage) {
   //async: false,//added for timing
   console.log("1 inside verifyUser: " + firstName + lastName + verifyImage);
