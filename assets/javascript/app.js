@@ -131,7 +131,7 @@ $(document).ready(function() {
     //TestPrint
     console.log("App.js Verify Button test: Input Parms to verifyUser " + testFirst + testLast + verifyString);
     //Call api and pass in verifyIMage
-    verifyUser(testFirst, testLast, verifystring);
+    verifyUser(testFirst, testLast, verifyString);
   });
   //Page 3 Webcam Verify Button
   // $("#verifyButton").on("click", function() {
