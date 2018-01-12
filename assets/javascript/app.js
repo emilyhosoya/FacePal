@@ -34,7 +34,7 @@ $(document).ready(function() {
 
   //verify base64 holder
   //let imageData = "";
-  //let verifyImage = imageData;
+  let verifyImage = "";
 
   //console.log(imageData);
 
