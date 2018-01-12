@@ -4,11 +4,9 @@
 // } ;
 
 var verifyUser = function(firstName, lastName, verifyImage) {
-  async: false,//added for timing
-  console.log("1 inside verifyUser");
-  console.log("2 My Input Parms");
-  console.log("3" + firstName + lastName);
-  console.log("4 verifyImage" + verifyImage);
+  //async: false,//added for timing
+  console.log("1 inside verifyUser: " + firstName + lastName + verifyImage);
+
 
   var request = new XMLHttpRequest();
 
@@ -20,9 +18,9 @@ var verifyUser = function(firstName, lastName, verifyImage) {
 
   request.onreadystatechange = function() {
     if (this.readyState === 4) {
-      console.log("5 Status:", this.status);
-      console.log("6 Headers:", this.getAllResponseHeaders());
-      console.log("7 Body:", this.responseText);//.ajaxComplete.afterload();
+      console.log("Status:", this.status);
+      console.log("Headers:", this.getAllResponseHeaders());
+      console.log("Body:", this.responseText);//.ajaxComplete.afterload();
 
       //verifyString = this.responseText;
      // console.log("8 verifyString Test", verifyString);
