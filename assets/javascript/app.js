@@ -34,7 +34,7 @@ $(document).ready(function() {
 
   //verify base64 holder
   //let imageData = "";
-  let verifyImage = imageData;
+  //let verifyImage = imageData;
 
   //console.log(imageData);
 
@@ -134,7 +134,7 @@ $(document).ready(function() {
 
     //TestPrint
     console.log("Test Button");
-    console.log("Verify Image Test" + verifyImage);
+    console.log("boobs Verify Image Test " + verifyImage);
 
     console.log("Input Parms to verifyUser");
     console.log(testFirst);

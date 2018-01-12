@@ -37,6 +37,18 @@ var verifyUser = function(firstName, lastName, verifyImage) {
   request.send(JSON.stringify(body));
   //console.log("111111");
 
+  request.onreadystatechange = function() {
+    if (this.readyState === 4) {
+      console.log("Status:", this.status);
+      console.log("Headers:", this.getAllResponseHeaders());
+      console.log("Body:", this.responseText);//.ajaxComplete.afterload();
+
+      //verifyString = this.responseText;
+     // console.log("8 verifyString Test", verifyString);
+      //document.getElementById("writeIt").innerHTML = this.responseText;//added
+    }
+  };
+
   // if(images[0].transaction.confidence > 0.60){
   //     console.log("Success!")
   // } else {

@@ -1,4 +1,3 @@
-//let imageData = "";
 let verifyImage = "";
 
 var webcamModule = function() {
