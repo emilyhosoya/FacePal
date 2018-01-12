@@ -1,33 +1,14 @@
 //let imageData = "";
 let verifyImage = "";
 
-
-  //Page 3 Webcam Verify Button
-  // $("#verifyButton").on("click", function() {
-  //   var testFirst = firstName;
-  //   var testLast = lastName;
-    
-  //   //TestPrint
-  //   console.log("Test Button");
-  //   console.log("Verify Image Test" + verifyImage);
-
-  //   console.log("Input Parms to verifyUser");
-  //   console.log(testFirst);
-  //   console.log(testLast);
-  //   //Call api and pass in verifyIMage
-  //   verifyUser(testFirst, testLast, verifyImage);
-  // });
-
 var webcamModule = function() {
   var streaming = false;
   var video = null;
 
   // image return
 
+  // console.log("TEST" +imageData);
 
-
- // console.log("TEST" +imageData);
-  
   (function() {
     video = document.getElementById("webcamVideo");
     navigator.mediaDevices
@@ -57,7 +38,7 @@ var webcamModule = function() {
         var countdown = captureInterval / 1000;
         var counterFunction = setInterval(function() {
           $("#showCounter").html(countdown);
-          
+
           //Take the picture
           if (countdown <= 0) {
             takepicture(video);
@@ -66,14 +47,12 @@ var webcamModule = function() {
           }
           countdown--;
         }, 1000);
-
       },
       false
     );
   })();
-  
-  console.log('verify image: ' + verifyImage);
 
+  console.log("verify image: " + verifyImage);
 };
 
 var takepicture = function(video) {
@@ -90,13 +69,7 @@ var takepicture = function(video) {
   console.log(imageData); ///return
 
   //return imageData;
-  verifyImage = imageData.split(',')[1];
-  
+  verifyImage = imageData.split(",")[1];
 
-
-  //Copy image data 
+  //Copy image data
 };
-  
-
-
-

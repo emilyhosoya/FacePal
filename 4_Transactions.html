@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
-    
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -12,69 +10,43 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 
     <!--Let browser know website is optimized for mobile-->
-    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 </head>
 
 <body>
-    <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper">
-                <div class="col s12">
-                    <a href="./index.html" class="right">Home</a>
-                    <span id="nav-mobile" class="left hide-on-med-and-down">
-                        <a href="./1_Create_Your_Profile.html" class="breadcrumb">Enroll New User</a>
-                        <a href="./2_Your_Info.html" class="breadcrumb">Initiate Payment</a>
-                        <a href="./3_webcam_verify.html" class="breadcrumb">Verify User</a>
-                    </span>
-                </div>
-            </div>
-        </nav>
-    </div>
     <div class="container animated fadeIn">
         <div class="row">
             <div class="col s12 m8 offset-m2">
-                <div>
+                <div id="new-user">
                     <div class="card">
                         <div class="card-title center-align">
-                            <h4>Say cheese!</h4>
+                            <h1>Payment History</h1>
                         </div>
                         <div class="card-content">
                             <form action="#">
-                                <div class="center-align">
-                                    <!--Webcam HTML-->
-                                    <a class="btn" href="#" onClick="webcamModule();">START CAMERA</a>
+                                <div class="row">
+                                    <h4 class="center-align">Recent Transaction</h4>
                                 </div>
+
+                                <!--Webcam HTML
+                                <a href="#" onClick="webcamModule();">START CAMERA</a>
                                 </br>
                                 <video id="webcamVideo"></video>
                                 <div id="showCounter"></div>
 
                                 <div class="input-field right-align">
-                                    <button class="btn" id="verifyButton" type="submit" name="action">Verify
+                                    <button class="btn" id="submit" type="submit" name="action">Submit
                                         <i class="material-icons right">send</i>
                                     </button>
-                                </div>
+                                </div> -->
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="writeIt">
-
-        <!-- Modal Structure -->
-        <!-- <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4 id="modal-header"></h4>
-      <p id="modal-message"></p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
-  </div> -->
     </div>
     <!--Import jQuery before materialize.js-->
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
@@ -83,8 +55,7 @@
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
     <script src="./assets/javascript/webcam.js"></script>
-    <script src="./assets/javascript/verify.js"></script>
-    <script src="./assets/javascript/app.js"></script>
+
 </body>
 
 </html>

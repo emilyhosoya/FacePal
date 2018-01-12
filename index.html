@@ -20,20 +20,6 @@
 </head>
 
 <body>
-    <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper">
-                <div class="col s12">
-                    <a href="./index.html" class="right">Home</a>
-                    <span id="nav-mobile" class="left hide-on-med-and-down">
-                        <a href="./1_Create_Your_Profile.html" class="breadcrumb">Enroll New User</a>
-                        <a href="./2_Your_Info.html" class="breadcrumb">Initiate Payment</a>
-                        <a href="./3_webcam_verify.html" class="breadcrumb">Verify User</a>
-                    </span>
-                </div>
-            </div>
-        </nav>
-    </div>
     <div class="container">
         <div class="row wow animated fadeIn">
             <div class="col s12">
@@ -49,7 +35,7 @@
                     </a>
                 </div>
             </div>
-            <div class="row wow animated fadeInUp">
+            <div class="row animated fadeInUp">
                 <div class="col s12">
                     <div class="card">
                         <div class="card-content white-text">
@@ -64,8 +50,8 @@
                             </div>
                             <div class="row center-align">
                                 <div class="col s12">
-                                    <button class="pulse btn wow animated fadeInLeft" href="./1_Create_Your_Profile.html">Sign Up</button>
-                                    <button class="pulse btn wow animated fadeInRight" href="./Login.html">Login</button>
+                                    <a class="pulse btn animated fadeInLeft" href="./1_Create_Your_Profile.html">Sign Up</a>
+                                    <a class="pulse btn wow animated fadeInRight" onclick="showLogin()">Login</a>
                                 </div>
                             </div>
                             <hr>
@@ -134,9 +120,11 @@
 
 
             <!--Import jQuery before materialize.js-->
+
             <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+            <script src="./assets/javascript/login.js"></script>
 
             <script>
                 $(document).ready(function () {
