@@ -122,25 +122,7 @@ $(document).ready(function() {
     console.log("submit log" + lastName);
   });
 
-  $("#verifyButton").on("click", function() {
-    var testFirst = firstName;
-    var testLast = lastName;
-    var verifyString = verifyImage;
 
-
-    //TestPrinting
-    console.log("App.js Verify Button test: Input Parms to verifyUser " + testFirst + testLast + " " + verifyString);
-    //Call api and pass in verifyIMage
-    verifyUser(testFirst, testLast, verifyString);
-  });
-  //Page 3 Webcam Verify Button
-  // $("#verifyButton").on("click", function() {
-  //   verifyUser(firstName,lastName,imageData);
-  //   //test
-  //   console.log('submit log' + imageData);
-  //   console.log('submit log' + firstName);
-  //   console.log('submit log' + lastName);
-  // });
 
   ref.on(
     "child_added",
@@ -180,4 +162,25 @@ $(document).ready(function() {
       console.log("Errors handled: " + errorObject.code);
     }
   );
+
+  $("#verifyButton").on("click", function() {
+    var testFirst = firstName;
+    var testLast = lastName;
+    var verifyString = verifyImage;
+
+
+    //TestPrinting
+    console.log("App.js Verify Button test: Input Parms to verifyUser " + testFirst + testLast + " " + verifyString);
+    //Call api and pass in verifyIMage
+    verifyUser(testFirst, testLast, verifyString);
+  });
+  //Page 3 Webcam Verify Button
+  // $("#verifyButton").on("click", function() {
+  //   verifyUser(firstName,lastName,imageData);
+  //   //test
+  //   console.log('submit log' + imageData);
+  //   console.log('submit log' + firstName);
+  //   console.log('submit log' + lastName);
+  // });
+  
 });
