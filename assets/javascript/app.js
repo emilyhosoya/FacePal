@@ -22,7 +22,7 @@ $(document).ready(function() {
     storageBucket: "facepal-a9ecc.appspot.com",
     messagingSenderId: "603932838503"
   };
- console.log("25 app.js testing for verifyimage: " + verifyImage);
+  //console.log("25 app.js testing for verifyimage: " + verifyImage);
   let firstName = "";
   let lastName = "";
   let email = "";
