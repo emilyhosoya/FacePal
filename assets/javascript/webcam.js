@@ -52,7 +52,7 @@ var webcamModule = function() {
     );
   })();
 
-  console.log("verify image: " + verifyImage);
+  //console.log("verify image: " + verifyImage);
 };
 
 var takepicture = function(video) {
@@ -66,10 +66,10 @@ var takepicture = function(video) {
   var imageData = canvas.toDataURL("image/png");
   $("#showCounter").html("See image data in console.");
   $(video).hide();
-  console.log(imageData); ///return
+  //console.log(imageData); ///return
 
   //return imageData;
   verifyImage = imageData.split(",")[1];
-
+  console.log("Webcam.js testing: "+verifyImage)
   //Copy image data
 };
