@@ -1,3 +1,4 @@
+//let imageData = "";
 let verifyImage = "";
 
 var webcamModule = function() {
@@ -69,6 +70,6 @@ var takepicture = function(video) {
 
   //return imageData;
   verifyImage = imageData.split(",")[1];
-  console.log("after split: " + verifyImage);
+
   //Copy image data
 };
