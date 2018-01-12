@@ -25,6 +25,7 @@ $(document).ready(function() {
   //console.log("25 app.js testing for verifyimage: " + verifyImage);
   let firstName = "";
   let lastName = "";
+  let verifyImage = "";
   let email = "";
   let dob = "";
   const today = moment().format("DD MMMM, YYYY");
@@ -182,5 +183,5 @@ $(document).ready(function() {
   //   console.log('submit log' + firstName);
   //   console.log('submit log' + lastName);
   // });
-  
+
 });
