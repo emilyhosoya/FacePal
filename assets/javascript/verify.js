@@ -31,7 +31,7 @@ var verifyUser = function(testFirst, testLast, verifyString) {
   var body = {
     image: verifyString,
     gallery_name: "FirstGallery",
-    subject_id: testFirst + testLast
+    subject_id: testFirst + testLast ,
   };
 
   request.send(JSON.stringify(body));
