@@ -4,7 +4,7 @@
 var verifyUser = function(testFirst, testLast, verifyString) {
   // async: false,//added for timing
   // console.log("1: verify.js inside verifyUser" + testFirst + testLast + " " + verifyString);
-
+  console.log('verify.js verify function inputs '+ testFirst + testLast + " " + verifyString);
 
   var request = new XMLHttpRequest();
 
@@ -32,7 +32,7 @@ var verifyUser = function(testFirst, testLast, verifyString) {
     subject_id: testFirst + testLast ,
   };
 
-  console.log('verify.js verify user param '+ testFirst + testLast + " " + verifyString);
+  //console.log('verify.js verify user param '+ testFirst + testLast + " " + verifyString);
 
   request.send(JSON.stringify(body));
   //console.log("111111");
