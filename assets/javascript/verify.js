@@ -21,6 +21,7 @@ var verifyUser = function(firstName, lastName, verifyImage) {
       console.log("Status:", this.status);
       console.log("Headers:", this.getAllResponseHeaders());
       console.log("Body:", this.responseText);//.ajaxComplete.afterload();
+      console.log("FINISHED!");
 
       //verifyString = this.responseText;
      // console.log("8 verifyString Test", verifyString);
@@ -34,20 +35,16 @@ var verifyUser = function(firstName, lastName, verifyImage) {
     subject_id: firstName + lastName
   };
 
+  console.log("Printing body object");
+  console.log("body.image: " + body.image);
+  console.log("body.gallery_name: " + body.gallery_name);
+  console.log("body.image: " + body.subject_id);
+
   request.send(JSON.stringify(body));
-  //console.log("111111");
+  
+  console.log("End of Verify");
 
-  request.onreadystatechange = function() {
-    if (this.readyState === 4) {
-      console.log("Status:", this.status);
-      console.log("Headers:", this.getAllResponseHeaders());
-      console.log("Body:", this.responseText);//.ajaxComplete.afterload();
 
-      //verifyString = this.responseText;
-     // console.log("8 verifyString Test", verifyString);
-      //document.getElementById("writeIt").innerHTML = this.responseText;//added
-    }
-  };
 
   // if(images[0].transaction.confidence > 0.60){
   //     console.log("Success!")
