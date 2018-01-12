@@ -1,8 +1,5 @@
-//var firstName ='chad';
-//var lastName = 'chazmister';
-//var profileImage = 'https://upload.wikimedia.org/wikipedia/commons/e/e9/Official_portrait_of_Barack_Obama.jpg';
-
 var enrollUser = function (firstName,lastName,img) {
+  
   var request = new XMLHttpRequest();
 
   request.open("POST", "https://api.kairos.com/enroll");

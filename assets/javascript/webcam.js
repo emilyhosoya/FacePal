@@ -1,5 +1,5 @@
 //let imageData = "";
-let verifyImage = "";
+//let verifyImage = "";
 
 var webcamModule = function() {
   var streaming = false;

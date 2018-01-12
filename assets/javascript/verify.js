@@ -1,11 +1,5 @@
-//let verifyString = "";
-
-
 var verifyUser = function(testFirst, testLast, verifyString) {
   // async: false,//added for timing
-  // console.log("1: verify.js inside verifyUser" + testFirst + testLast + " " + verifyString);
-  //console.log('verify.js verify function inputs '+ testFirst + testLast + " " + verifyString);
-
   var request = new XMLHttpRequest();
 
   request.open("POST", "https://api.kairos.com/verify");
@@ -19,9 +13,7 @@ var verifyUser = function(testFirst, testLast, verifyString) {
       console.log("Status:", this.status);
       console.log("Headers:", this.getAllResponseHeaders());
       console.log("Body:", this.responseText);//.ajaxComplete.afterload();
-
-      //verifyString = this.responseText;
-     // console.log("8 verifyString Test", verifyString);
+      
       //document.getElementById("writeIt").innerHTML = this.responseText;//added
     }
   };
