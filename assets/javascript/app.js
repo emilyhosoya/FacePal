@@ -127,7 +127,7 @@ $(document).ready(function() {
 ///DEBUG
 
 var webcamModule = function() {
-  console.log("hitting webcam module button ");
+  console.log("hitting webcam module button ")
   
   var streaming = false;
   var video = null;
