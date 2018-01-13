@@ -1,4 +1,4 @@
-// let pullJson = "";
+let pullJson = {};
 // let confidence = (pullJson.images[0].transaction.confidence);
 //let jString = (JSON.parse(pullJson));
    
