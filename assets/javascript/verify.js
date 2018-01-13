@@ -1,4 +1,4 @@
-let extractJSON={};
+var responseText;
    
   var verifyUser = function(testFirst, testLast, verifyString) {
     // async: false,//added for timing
