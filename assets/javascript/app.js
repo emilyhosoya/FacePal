@@ -175,6 +175,10 @@ $(document).ready(function() {
     //Call api and pass in verifyIMage
     verifyUser(testFirst, testLast, verifyString);
   });
+
+  $("#compareButton").on("click", function() {
+
+  });
   //Page 3 Webcam Verify Button
   // $("#verifyButton").on("click", function() {
   //   verifyUser(firstName,lastName,imageData);
