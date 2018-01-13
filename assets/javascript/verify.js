@@ -1,4 +1,4 @@
-var responseText;
+let pullJson = "";
    
   var verifyUser = function(testFirst, testLast, verifyString) {
     // async: false,//added for timing
@@ -15,7 +15,7 @@ var responseText;
         console.log("Status:", this.status);
         console.log("Headers:", this.getAllResponseHeaders());
         console.log("Body:", this.responseText);//.ajaxComplete.afterload();
-        extractJSON = this.responseText;
+        pullJson = this.responseText;
         //document.getElementById("writeIt").innerHTML = this.responseText;//added
       }
     };
