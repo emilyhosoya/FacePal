@@ -1,4 +1,4 @@
-var findTheJSON = "";
+
    
   var verifyUser = function(testFirst, testLast, verifyString) {
     // async: false,//added for timing
@@ -15,7 +15,7 @@ var findTheJSON = "";
         console.log("Status:", this.status);
         console.log("Headers:", this.getAllResponseHeaders());
         console.log("Body:", this.responseText);//.ajaxComplete.afterload();
-        var findTheJSON = this.responseText;
+        
         //document.getElementById("writeIt").innerHTML = this.responseText;//added
       }
     };
@@ -29,8 +29,6 @@ var findTheJSON = "";
     //console.log('verify.js verify user param '+ testFirst + testLast + " " + verifyString);
 
     request.send(JSON.stringify(body));
-    
-    
     //console.log("111111");
 
     // if(images[0].transaction.confidence > 0.60){
