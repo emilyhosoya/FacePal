@@ -25,17 +25,13 @@ $(document).ready(function() {
   //console.log("25 app.js testing for verifyimage: " + verifyImage);
   let firstName = "";
   let lastName = "";
-  let verifyImage = "";
+  //let verifyImage = "";
   let email = "";
   let dob = "";
   const today = moment().format("DD MMMM, YYYY");
   let age = "";
   let img = "";
   let paymentTokens = [];
-
-  let testFirst = firstName;
-  let testLast = lastName;
-  let verifyString = verifyImage;
 
   firebase.initializeApp(config);
   let ref = firebase.database().ref();
@@ -169,7 +165,9 @@ $(document).ready(function() {
   );
 
   $("#verifyButton").on("click", function() {
-
+    var testFirst = firstName;
+    var testLast = lastName;
+    var verifyString = verifyImage;
 
 
     //TestPrinting
