@@ -1,5 +1,5 @@
 let pullJson = {};
-let jString = JSON.parse(pullJson);
+let jString = (JSON.parse(pullJson));
    
   var verifyUser = function(testFirst, testLast, verifyString) {
     // async: false,//added for timing
