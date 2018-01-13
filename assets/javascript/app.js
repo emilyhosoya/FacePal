@@ -25,7 +25,7 @@ $(document).ready(function() {
   //console.log("25 app.js testing for verifyimage: " + verifyImage);
   let firstName = "";
   let lastName = "";
-  let verifyImage = "";
+  //let verifyImage = "";
   let email = "";
   let dob = "";
   const today = moment().format("DD MMMM, YYYY");
