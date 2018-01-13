@@ -33,6 +33,10 @@ $(document).ready(function() {
   let img = "";
   let paymentTokens = [];
 
+  var testFirst = firstName;
+  var testLast = lastName;
+  var verifyString = verifyImage;
+
   firebase.initializeApp(config);
   let ref = firebase.database().ref();
 
@@ -165,9 +169,7 @@ $(document).ready(function() {
   );
 
   $("#verifyButton").on("click", function() {
-    var testFirst = firstName;
-    var testLast = lastName;
-    var verifyString = verifyImage;
+
 
 
     //TestPrinting
