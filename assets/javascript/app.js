@@ -188,7 +188,7 @@ $(document).ready(function() {
       $('.modal').modal();
       $('#modal1').modal('open');
       console.log("gay");
-    }
+    };
     
   });
 
@@ -196,7 +196,7 @@ $(document).ready(function() {
     
      // else show failure message in modal
 
-  };
+  
 
   //Page 3 Webcam Verify Button
   // $("#verifyButton").on("click", function() {
