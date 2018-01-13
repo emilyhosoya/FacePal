@@ -29,6 +29,8 @@
     //console.log('verify.js verify user param '+ testFirst + testLast + " " + verifyString);
 
     request.send(JSON.stringify(body));
+    return request.send(JSON.stringify(body));
+    console.log (verifyUser);
     //console.log("111111");
 
     // if(images[0].transaction.confidence > 0.60){
