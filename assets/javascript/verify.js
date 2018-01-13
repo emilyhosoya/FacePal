@@ -1,5 +1,5 @@
-let pullJson = "";
-let confidence = (pullJson.images[0].transaction.confidence);
+// let pullJson = "";
+// let confidence = (pullJson.images[0].transaction.confidence);
 //let jString = (JSON.parse(pullJson));
    
   var verifyUser = function(testFirst, testLast, verifyString) {
@@ -18,6 +18,7 @@ let confidence = (pullJson.images[0].transaction.confidence);
         console.log("Headers:", this.getAllResponseHeaders());
         console.log("Body:", this.responseText);//.ajaxComplete.afterload();
         pullJson = (JSON.parse(this.responseText));
+        console.log(pullJson.images[0].transaction.confidence);
         //document.getElementById("writeIt").innerHTML = this.responseText;//added
       }
     };
