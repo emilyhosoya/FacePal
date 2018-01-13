@@ -1,4 +1,4 @@
-$(document).ready(function() {
+
    
   var verifyUser = function(testFirst, testLast, verifyString) {
     // async: false,//added for timing
@@ -46,4 +46,4 @@ $(document).ready(function() {
     // $('#modal1').modal('open');
   };
 
-});
+
