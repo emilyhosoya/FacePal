@@ -179,12 +179,25 @@ $(document).ready(function() {
   $("#compareButton").on("click", function() {
     console.log(confNums);
     if(confNums>0.60){
+    $("#modal-header").text("Success!");
+    $("#modal-message").text("Your payment has been sent.");
       console.log("yay");
     }else{
+      $("#modal-header").text("Uh oh!");
+      $("#modal-message").text("You aren't the authorized user for this transaction.");
+      $('.modal').modal();
+      $('#modal1').modal('open');
       console.log("gay");
     }
     
   });
+
+    // if confidence is greater than .6, show modal
+    
+     // else show failure message in modal
+
+  };
+
   //Page 3 Webcam Verify Button
   // $("#verifyButton").on("click", function() {
   //   verifyUser(firstName,lastName,imageData);
