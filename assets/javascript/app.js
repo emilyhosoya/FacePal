@@ -179,9 +179,12 @@ $(document).ready(function() {
   $("#compareButton").on("click", function() {
     console.log(confNums);
     if(confNums>0.60){
-    $("#modal-header").text("Success!");
-    $("#modal-message").text("Your payment has been sent.");
-      console.log("yay");
+    
+      $('.modal').modal();
+      $('#modal1').modal('open')
+      $("#modal-header").text("Success!");
+      $("#modal-message").text("Your payment has been sent.");
+        console.log("yay");
     }else{
       $("#modal-header").text("Uh oh!");
       $("#modal-message").text("You aren't the authorized user for this transaction.");
