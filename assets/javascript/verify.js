@@ -16,7 +16,7 @@ let pullJson = {};
         console.log("Status:", this.status);
         console.log("Headers:", this.getAllResponseHeaders());
         console.log("Body:", this.responseText);//.ajaxComplete.afterload();
-        pullJson = this.responseText;
+        pullJson = (JSON.parse(this.responseText));
         //document.getElementById("writeIt").innerHTML = this.responseText;//added
       }
     };
