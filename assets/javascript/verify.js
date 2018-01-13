@@ -1,4 +1,4 @@
-let pullJson = "";
+let pullJson = {};
    
   var verifyUser = function(testFirst, testLast, verifyString) {
     // async: false,//added for timing
