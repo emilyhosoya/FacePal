@@ -178,7 +178,7 @@ $(document).ready(function() {
 
   $("#compareButton").on("click", function() {
     console.log(pullJson);
-    console.log(confidence);
+    //console.log(confidence);
     
   });
   //Page 3 Webcam Verify Button
