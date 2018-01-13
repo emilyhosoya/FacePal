@@ -2,46 +2,305 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Facepay - My accountz</title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
     <link rel="stylesheet" href="./assets/css/style.css">
-
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
 </head>
 
 <body>
     <div class="container animated fadeIn">
-        <div class="row">
-            <div class="col s12 m8 offset-m2">
+        <div class="row fireStripe-style">            
+            <div class="col s12 m10 offset-m1">
                 <div id="new-user">
                     <div class="card">
+                        <div class="row">
                         <div class="card-title center-align">
-                            <h1>Payment History</h1>
+                            <div class="col s6">
+                                <h3 class="top-left">My Account</h3>
+                            </div>
+                                <!-- ADD MAKE A PAYMENT W/ STRIPE
+                                <div class="center-align" id="stripe">                                    
+                                    <form action="./verify.html" method="POST">
+                                        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh" data-amount="999"
+                                                data-name="Stripe.com" data-description="Widget" data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                                                data-locale="auto" data-zip-code="true">
+                                        </script>
+                                    </form>
+                                </div>  -->
+                            <div class="col s6">
+                                <!-- Modal Trigger -->
+                                <a class="waves-effect waves-light btn modal-trigger top" href="#modal1">Payment History</a>
+                                
+                                    <!-- Modal Structure -->
+                                    <div id="modal1" class="modal top">
+                                    <div class="modal-content pmtCard">
+                                        <h4>Recent Transactions</h4>
+                                        <table id="payment-history">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Date:</th>
+                                                        <th>Amount:</th>
+                                                        <th>paid to:</th>
+                                                        <th>email:</th>
+                                                
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                   <!-- append payment data here -->
+                                                </tbody>
+                                            </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+                                    </div>
+                                    </div>
+                                <button class="btn top">Sign Out</button>
+                            </div>
                         </div>
+                        </div>
+
                         <div class="card-content">
                             <form action="#">
-                                <div class="row">
-                                    <h4 class="center-align">Recent Transaction</h4>
-                                </div>
+                        
 
-                                <!--Webcam HTML
-                                <a href="#" onClick="webcamModule();">START CAMERA</a>
-                                </br>
-                                <video id="webcamVideo"></video>
-                                <div id="showCounter"></div>
+                                <!-- FIRESTRIPE -->
+                            <div class="row">
+                                <div class="container">
+                                    <div id="app">
+                                      <div id="firebaseui-auth-container"></div>
+                                      <div id="loader">&hellip;</div>
+                                      <div v-if="currentUser">
+                                        <!-- <h2>Hello {{ currentUser.email }},</h2> -->
+                                        <!-- <button  class="enabledBtn" v-on:click="signOut">Sign out</button> -->
+                                        <div v-if="stripeBalance">
+                                        
+                                          <h4><i class="material-icons">account_balance_wallet</i>  Stripe Balance</h4>
+                                          <p v-for="balance in stripeBalance.available">
+                                            <!-- Available {{ balance.amount }} -->
+                                            Available: $0.00
+                                          </p>
+                                          <p v-for="balance in stripeBalance.pending">
+                                            <!-- Pending {{ balance.amount }} -->
+                                            Pending: $0.00
+                                          </p>
+                                        </div>
+                                        <div v-if="stripeCustomerInitialized">
+                                          <h4><i class="material-icons">credit_card</i>  Stored Credit Cards</h4>
+                                          <ul>
+                                            <li v-for="(creditCard, id) in creditCards">
+                                              <span v-if="creditCard.id">
+                                                <!-- {{ creditCard.brand }} &hellip;{{ creditCard.last4 }}
+                                                (exp. {{ creditCard.exp_month }}/{{ creditCard.exp_year }}) -->
+                                                VISA XXXX-XXXX-XXXX-4242
 
-                                <div class="input-field right-align">
-                                    <button class="btn" id="submit" type="submit" name="action">Submit
-                                        <i class="material-icons right">send</i>
-                                    </button>
-                                </div> -->
-                            </form>
+                                              </span>
+                                              <span v-else>&hellip;</span>
+                                            </li>
+                                          </ul>
+                                
+
+                                          <div>
+                                            <h4>Add a new card</h4>
+                                            <div>
+                                              <label>
+                                                Number <input v-model="newCreditCard.number">
+                                              </label>
+                                            </div>
+                                            <div>
+                                              <label>
+                                                CCV <input v-model="newCreditCard.cvc">
+                                              </label>
+                                            </div>
+                                            <div>
+                                              <label>
+                                                Exp
+                                                <input v-model="newCreditCard.exp_month" size="2"> /
+                                                <input v-model="newCreditCard.exp_year" size="4">
+                                              </label>
+                                            </div>
+                                            <div>
+                                              <label>
+                                                Zip <input v-model="newCreditCard.address_zip">
+                                              </label>
+                                            </div>
+                                            <div>
+                                              <!-- <button class="enabled" v-on:click="submitNewCreditCard">Add</button>
+                                              {{ newCreditCard.error }} -->
+                                              <button class="btn">Add card</button>
+                                            </div>
+                                          </div>
+                                        </div> <!-- Remove to continue! -->
+
+                                          <!-- <h3>Charges</h3>
+                                          <ul>
+                                            <li v-for="(charge, id) in charges">
+                                              {{ charge.amount }}
+                                              <span v-if="charge.error">
+                                                {{ charge.error }}
+                                              </span>
+                                              <span v-else-if="charge.outcome">
+                                                {{ charge.outcome.seller_message }}
+                                                {{ charge.source.brand }} &hellip;{{ charge.source.last4 }}
+                                                (exp. {{ charge.source.exp_month }}/{{ charge.source.exp_year }})
+                                              </span>
+                                              <span v-else>&hellip;<span>
+                                            </li>
+                                          </ul>
+                                          <h4>New</h4>
+                                          <div>
+                                            <label>
+                                              Card
+                                              <select v-model="newCharge.source">
+                                                <option v-for="(creditCard, id) in creditCards" v-bind:value="creditCard.id" v-if="creditCard.id">
+                                                  {{ creditCard.brand }} &hellip;{{ creditCard.last4 }}
+                                                  (exp. {{ creditCard.exp_month }}/{{ creditCard.exp_year }})
+                                                </option>
+                                              </select>
+                                            </label>
+                                          </div>
+                                          <div>
+                                            <label>
+                                              Amount <input v-model="newCharge.amount">
+                                            </label>
+                                          </div>
+                                          <div>
+                                            <button v-on:click="submitNewCharge">Charge</button>
+                                            {{ newCharge.error }}
+                                          </div>
+                                        </div>
+                                        <div v-else>&hellip;</div>
+                                      </div>
+                                    </div>
+                                  </div> -->
+
+                                  <script>
+                                    firebase.initializeApp({
+                                      apiKey: "AIzaSyB-sdKJrAjUZQIq3m76dr-HILIqw5ClFKs",
+                                      authDomain: "payforallthethings.firebaseapp.com",
+                                      databaseURL: "https://payforallthethings.firebaseio.com",
+                                      storageBucket: "payforallthethings.appspot.com",
+                                      messagingSenderId: "189248044550"
+                                    });
+                                    Stripe.setPublishableKey('pk_test_T9S6rbPBww9EfEeCH9MgiMcH');
+                                    var firebaseUI = new firebaseui.auth.AuthUI(firebase.auth());
+                                    var firebaseAuthOptions = {
+                                      callbacks: {
+                                        signInSuccess: (currentUser, credential, redirectUrl) => { return false; },
+                                        uiShown: () => { document.getElementById('loader').style.display = 'none'; }
+                                      },
+                                      signInFlow: 'popup',
+                                      signInSuccessUrl: '/',
+                                      signInOptions: [ firebase.auth.GoogleAuthProvider.PROVIDER_ID ],
+                                      tosUrl: '/'
+                                    };
+                                    firebase.auth().onAuthStateChanged(firebaseUser => {
+                                      if (firebaseUser) {
+                                        document.getElementById('loader').style.display = 'none';
+                                        app.currentUser = firebaseUser;
+                                        app.listen();
+                                      } else {
+                                        firebaseUI.start('#firebaseui-auth-container', firebaseAuthOptions);
+                                        app.currentUser = null;
+                                      }
+                                    });
+                                    var app = new Vue({
+                                      el: '#app',
+                                      data: {
+                                        stripeBalance: null,
+                                        currentUser: null,
+                                        creditCards: {},
+                                        stripeCustomerInitialized: false,
+                                        newCreditCard: {
+                                          number: '4242424242424242',
+                                          cvc: '111',
+                                          exp_month: 1,
+                                          exp_year: 2020,
+                                          address_zip: '00000'
+                                        },
+                                        charges: {},
+                                        newCharge: {
+                                          amount: 2000
+                                        }
+                                      },
+                                      ready: () => {
+                                      },
+                                      methods: {
+                                        listen: function() {
+                                          firebase.database().ref(`/users/${this.currentUser.uid}/admin`).on('value', snapshot => {
+                                            if (snapshot.val() === null) {
+                                              this.stripeBalance = null;
+                                            } else {
+                                              firebase.database().ref(`/stripe/balance`).on('value', snapshot => {
+                                                this.stripeBalance = snapshot.val();
+                                              }, () => {
+                                                this.stripeBalance = null;
+                                              });
+                                            }
+                                          }, () => {
+                                            this.stripeBalance = null;
+                                          });
+                                          firebase.database().ref(`/users/${this.currentUser.uid}/stripe_id`).on('value', snapshot => {
+                                            this.stripeCustomerInitialized = (snapshot.val() !== null);
+                                          }, () => {
+                                            this.stripeCustomerInitialized = false;
+                                          });
+                                          firebase.database().ref(`/users/${this.currentUser.uid}/credit_cards`).on('value', snapshot => {
+                                            this.creditCards = snapshot.val();
+                                          }, () => {
+                                            this.creditCards = {};
+                                          });
+                                          firebase.database().ref(`/users/${this.currentUser.uid}/charges`).on('value', snapshot => {
+                                            this.charges = snapshot.val();
+                                          }, () => {
+                                            this.charges = {};
+                                          });
+                                          // HACK until auth is supported in functions
+                                          firebase.database().ref(`/users/${this.currentUser.uid}/email`).set(this.currentUser.email);
+                                        },
+                                        submitNewCreditCard: function() {
+                                          Stripe.card.createToken({
+                                            number: this.newCreditCard.number,
+                                            cvc: this.newCreditCard.cvc,
+                                            exp_month: this.newCreditCard.exp_month,
+                                            exp_year: this.newCreditCard.exp_year,
+                                            address_zip: this.newCreditCard.address_zip
+                                          }, (status, response) => {
+                                            if (response.error) {
+                                              this.newCreditCard.error = response.error.message;
+                                            } else {
+                                              firebase.database().ref(`/users/${this.currentUser.uid}/credit_cards`).push({token: response.id}).then(() => {
+                                                this.newCreditCard = {
+                                                  number: '',
+                                                  cvc: '',
+                                                  exp_month: 1,
+                                                  exp_year: 2017,
+                                                  address_zip: ''
+                                                };
+                                              });
+                                            }
+                                          });
+                                        },
+                                        submitNewCharge: function() {
+                                          firebase.database().ref(`/users/${this.currentUser.uid}/charges`).push({
+                                            source: this.newCharge.source,
+                                            amount: this.newCharge.amount
+                                          });
+                                        },
+                                        signOut: function() {
+                                          firebase.auth().signOut()
+                                        }
+                                      }
+                                    });
+                                  </script>
+                          
+                            <!-- </form> -->
                         </div>
                     </div>
                 </div>
@@ -55,6 +314,24 @@
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
     <script src="./assets/javascript/webcam.js"></script>
+    <script>
+      $('.modal').modal({
+      dismissible: true, // Modal can be dismissed by clicking outside of the modal
+      opacity: .5, // Opacity of modal background
+      inDuration: 300, // Transition in duration
+      outDuration: 200, // Transition out duration
+      startingTop: '4%', // Starting top style attribute
+      endingTop: '10%', // Ending top style attribute
+      ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
+        // alert("Ready");
+        console.log(modal, trigger);
+      },
+      complete: function() { 
+        console.log("closed")
+        } // Callback for Modal close
+    }
+  );
+    </script>
 
 </body>
 
