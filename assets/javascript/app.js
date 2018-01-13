@@ -177,7 +177,7 @@ $(document).ready(function() {
   });
 
   $("#compareButton").on("click", function() {
-    console.log(pullJson);
+    console.log(jString);
   });
   //Page 3 Webcam Verify Button
   // $("#verifyButton").on("click", function() {
