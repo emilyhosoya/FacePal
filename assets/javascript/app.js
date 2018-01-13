@@ -184,13 +184,13 @@ $(document).ready(function() {
       $('#modal1').modal('open')
       $("#modal-header").text("Success!");
       $("#modal-message").text("Your payment has been sent.");
-        console.log("yay");
+        console.log("Success!");
     }else{
       $("#modal-header").text("Uh oh!");
       $("#modal-message").text("You aren't the authorized user for this transaction.");
       $('.modal').modal();
       $('#modal1').modal('open');
-      console.log("gay");
+      console.log("Fail");
     };
     
   });
@@ -201,13 +201,6 @@ $(document).ready(function() {
 
   
 
-  //Page 3 Webcam Verify Button
-  // $("#verifyButton").on("click", function() {
-  //   verifyUser(firstName,lastName,imageData);
-  //   //test
-  //   console.log('submit log' + imageData);
-  //   console.log('submit log' + firstName);
-  //   console.log('submit log' + lastName);
-  // });
+  
 
 });

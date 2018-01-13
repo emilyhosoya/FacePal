@@ -34,11 +34,7 @@
     request.send(JSON.stringify(body));
     //console.log("111111");
 
-    // if(images[0].transaction.confidence > 0.60){
-    //     console.log("Success!")
-    // } else {
-    //     console.log("Failure")
-    // }
+  
     // if confidence is greater than .6, show modal
     // $("#modal-header").text("Success!");
     // $("#modal-message").text("Your payment has been sent.");
