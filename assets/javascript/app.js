@@ -33,9 +33,9 @@ $(document).ready(function() {
   let img = "";
   let paymentTokens = [];
 
-  var testFirst = firstName;
-  var testLast = lastName;
-  var verifyString = verifyImage;
+  let testFirst = firstName;
+  let testLast = lastName;
+  let verifyString = verifyImage;
 
   firebase.initializeApp(config);
   let ref = firebase.database().ref();
