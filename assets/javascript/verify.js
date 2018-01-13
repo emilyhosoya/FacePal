@@ -18,7 +18,7 @@
         console.log("Headers:", this.getAllResponseHeaders());
         console.log("Body:", this.responseText);//.ajaxComplete.afterload();
         pullJson = (JSON.parse(this.responseText));
-        //console.log(pullJson.images[0].transaction.confidence);
+        console.log(pullJson.images[0].transaction.confidence);
         //document.getElementById("writeIt").innerHTML = this.responseText;//added
       }
     };
