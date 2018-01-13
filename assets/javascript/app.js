@@ -178,7 +178,11 @@ $(document).ready(function() {
 
   $("#compareButton").on("click", function() {
     console.log(confNums);
-    //console.log(confidence);
+    if(confNums>0.60){
+      console.log("yay");
+    }else{
+      console.log("gay");
+    }
     
   });
   //Page 3 Webcam Verify Button
