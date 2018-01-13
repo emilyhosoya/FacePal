@@ -177,7 +177,7 @@ $(document).ready(function() {
   });
 
   $("#compareButton").on("click", function() {
-    console.log(pullJson);
+    console.log(confNums);
     //console.log(confidence);
     
   });
